@@ -1,0 +1,433 @@
+body {
+    font-family: Arial;
+}
+table {
+    font-family: Arial;
+    border-collapse: collapse;
+    width: 100%;
+    *border: 1px solid red;
+    margin-bottom: 10px;
+}
+
+th {
+    padding: 10px 6px;
+}
+
+th.hai {
+    border: 1px solid cyan;
+}
+
+td {
+    padding: 10px 6px;
+    vertical-align: top;
+    font-size: 12px;
+}
+
+span {
+    display: inline-block;
+    *border: 2px solid red;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+
+/****/
+
+table.area-kop th {
+    border: 2px solid black;
+}
+
+
+/****/
+
+table.area-kop2 {
+    border: 2px solid black;
+}
+
+
+/****/
+
+.area-logo {
+    white-space: nowrap;
+}
+
+.logo {
+    *border: 2px solid blue;
+    height: 100px;
+}
+
+.logo2 {
+    height: 50px;
+}
+
+.isi {
+    font-weight: normal;
+    font-size: 8px;
+}
+
+
+/****/
+
+table.area-pemotong {
+    border: 2px solid black;
+    margin-top: 5px;
+}
+
+.area-pemotong td {
+    *border: 2px solid pink;
+}
+
+.area-pemotong td:nth-child(1) {
+    width: 120px;
+}
+
+.area-pemotong span {
+    border-bottom: 2px solid red;
+}
+
+
+/****/
+
+.nama-kolom {
+    width: 100px;
+}
+
+.kode-biru {
+    color: #00D9EB;
+    width: 30px;
+    font-size: 9px;
+}
+
+.border-bawah {
+    border-bottom: 1px solid black;
+}
+
+.titik-dua {
+    width: 20px;
+    *border: 1px solid red;
+}
+
+.full-width {
+    width: 100% !important;
+}
+
+.nomor {
+    width: 30px;
+    text-align: center;
+}
+
+.bg-grey {
+    background: #ccc;
+}
+
+.kotak {
+    border: 1px solid black;
+    width: 200px;
+}
+
+
+/****/
+
+table.kotak-ttd {
+    border: 1px solid black;
+}
+
+
+/****/
+
+table.area-identitas-penerima {
+    border: 2px solid black;
+}
+
+
+/****/
+
+table.area-rincian-penghasilan {
+    border: 2px solid black;
+}
+
+table.area-rincian-penghasilan thead th {
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+table.area-rincian-penghasilan tbody td {
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 4px 8px;
+}
+
+
+/****/
+
+table.area-identitas-pemotong {
+    border: 2px solid black;
+}
+
+
+/****/
+
+table.area-kop-slip {
+	width: 100%;
+}
+
+.logo-slip {
+    height: 50px;
+}
+
+table.area-kop-slip td {
+    padding: 0 0;
+    *border: 1px solid green;
+}
+
+table.area-kop-slip td:nth-child(1) {
+    *padding: 20px;
+}
+
+
+/***/
+
+.area-keterangan-slip {
+    text-align: right;
+    font-weight: bold;
+    min-width: 100%;
+}
+
+.area-keterangan-slip div.atas {
+    border-bottom: 1px solid black;
+    padding-bottom: 4px;
+    font-size: 13px;
+    min-width: 100%;
+}
+
+.area-keterangan-slip div.bawah {
+    border-top: 1px solid black;
+    padding-top: 4px;
+    min-width: 100%;
+}
+
+
+/****/
+
+.judul-kolom td {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    font-weight: bold;
+}
+
+
+/****/
+
+table.pph-21-26-dipotong {
+    border: 2px solid black;
+}
+
+table.pph-21-26-dipotong .sub-judul td {
+    background: #eee;
+}
+
+table.pph-21-26-dipotong th,
+table.pph-21-26-dipotong td {
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+
+/****/
+
+table.kode-objek-pph-21-26 {
+    border: 2px solid black;
+}
+
+table.kode-objek-pph-21-26 th {
+    background: #eee;
+    border-bottom: 2px solid black
+}
+
+table.kode-objek-pph-21-26 td.sub-judul {
+    font-weight: bold;
+}
+
+
+/****/
+
+table.area-data-slip {
+    *border: 2px solid red !important;
+    border-collapse: collapse;
+    min-width: 100%;
+}
+
+
+table.area-data-slip-yellow th {
+    *border: 2px solid red !important;
+    padding: 2px 6px;
+    background: #f8c004;
+    min-width: 100%;
+}
+
+table.area-data-slip td {
+    *border: 2px solid red !important;
+    padding: 4px 6px;
+}
+
+table.area-data-slip td.penerimaan,
+table.area-data-slip td.potongan {
+    *background: yellow;
+    padding: 0px 0px;
+}
+
+table.area-data-slip td.judul-item {
+    border: 4px solid #eee;
+}
+
+table.area-data-slip td.take-home-pay {
+    *background: lime;
+    *border: 2px solid red;
+    *display: block;
+    padding: 0px 0px !important;
+}
+
+td.take-home-pay table {
+    margin-bottom: 0px;
+}
+
+td.take-home-pay table td {
+    border: 1px solid #000000;
+    text-align: right;
+    padding: 4px 5px;
+}
+
+
+/****/
+
+table.area-data-slip {
+    font-size: 13px;
+    *font-size: 50%;
+}
+
+
+/***/
+
+@media print {
+    table.area-data-slip {}
+    table.area-kop-slip.kalkulasi-tagihan th,
+    table.area-kop-slip.kalkulasi-tagihan td,
+    table.area-data-slip.kalkulasi-tagihan th,
+    table.area-data-slip.kalkulasi-tagihan td,
+    table.terbilang.kalkulasi-tagihan th,
+    table.terbilang.kalkulasi-tagihan td {
+        font-size: 8pt;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
+        *color: red;
+        vertical-align: top;
+    }
+    table.area-data-slip.kalkulasi-tagihan {
+        page-break-inside: avoid;
+        *margin-top: 100px;
+    }
+}
+
+@page {
+    *size: auto;
+    /* auto is the initial value */
+    *size: A4;
+    /* DIN A4 standard, Europe */
+    /* this affects the margin in the printer settings */
+    /*margin: 10mm 2mm 1mm 2mm;  */
+    *margin: 25mm 25mm 25mm 25mm;
+    size: auto;
+    margin: 20mm 0 10mm 0;
+}
+
+
+/****/
+
+td.nilai-angka {
+    text-align: right;
+    *border: 1px solid red;
+}
+
+
+/****/
+
+.laporan-kalkulasi-gaji {
+    *border: 2px solid red;
+    *padding: 100px;
+    *padding-left: 10px;
+    *padding-right: 10px;
+    overflow-x: auto;
+}
+
+.laporan-kalkulasi-gaji table {
+    font-size: 50%;
+}
+
+.note {
+    font-size: 10px;
+    font-style: italic;
+}
+
+.kotak-merah {
+    min-width: 10px;
+    min-height: 10px;
+    background-color: #eb0504;
+    border: 1px solid #000000;
+    margin-top: 3px;
+    text-align: center;
+}
+
+.kotak-hijau {
+    min-width: 10px;
+    min-height: 10px;
+    background-color: #04ae53;
+    border: 1px solid #000000;
+    margin-top: 3px;
+    text-align: center;
+}
+
+
+/*@page {
+  size: 5.5in 8.5in;
+  border:2px solid cyan; 
+}
+*/
+
+/****/
+.header {
+    /*border: 1px solid red;*/
+    border-bottom: 1px solid black;
+}
+.header .nama-perusahaan {
+    text-align: center;
+}
+
+/****/
+.tabel-spk thead tr:nth-child(2) th {
+    border-bottom: 1px solid black;
+}
+.tabel-spk th ,
+.tabel-spk td {
+    padding: 5px 10px 5px 0px;
+    font-size: 11px;
+}
+.tabel-spk td.kosong {
+    padding: 0 0;
+}
+
+/****/
+/*@media print {*/
+    /*#page-number {
+        border: 1px solid cyan;
+    }
+    #page-number:after {
+        content: "Page " counter(page);
+        counter-increment: page;
+        border: 1px solid red;
+      }*/
+/*}*/
+

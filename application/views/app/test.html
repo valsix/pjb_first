@@ -1,0 +1,1908 @@
+	<!DOCTYPE html>
+	<html>
+	
+	<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<title>PJB MANAJEMEN RISIKO</title>
+	<!-- Favicon-->
+	<link rel="shortcut icon" href="http://localhost/assets/img/favicon.ico" type="image/x-icon" />
+	
+	<!-- Google Fonts -->
+	<link href="http://localhost/assets/template/backend/css/icon.css" rel="stylesheet" type="text/css">
+	
+	<link href="http://localhost/assets/template/backend/plugins/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" type="text/css">
+	
+	<!-- Bootstrap Core Css -->
+	<link href="http://localhost/assets/template/backend/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+	
+	<!-- Waves Effect Css -->
+	<link href="http://localhost/assets/template/backend/plugins/node-waves/waves.css" rel="stylesheet" />
+	
+	<!-- Animation Css -->
+	<link href="http://localhost/assets/template/backend/plugins/animate-css/animate.css" rel="stylesheet" />
+	
+	<!-- Wait Me Css -->
+	<link href="http://localhost/assets/template/backend/plugins/waitme/waitMe.css" rel="stylesheet" />
+	
+	<!-- Bootstrap Select Css -->
+	<!--<link href="http://localhost/assets/template/backend/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />-->
+	
+	<!-- Morris Chart Css-->
+	<link href="http://localhost/assets/template/backend/plugins/morrisjs/morris.css" rel="stylesheet" />
+	
+	<!-- Style Css -->
+	<link href="http://localhost/assets/template/backend/css/style.css" rel="stylesheet">
+	
+	<!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+	<link href="http://localhost/assets/template/backend/css/themes/all-themes.css" rel="stylesheet" />
+	<link href="http://localhost/assets/template/backend/plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+	<link href="http://localhost/assets/css/dataTables.bootstrap.css" rel="stylesheet">
+	<link href="http://localhost/assets/css/jquery.treetable.theme.default.css" rel="stylesheet">
+	<link href="http://localhost/assets/css/jquery.treetable.css" rel="stylesheet">
+	
+	<!-- Style Css -->
+	<link href="http://localhost/assets/resources/css/custom.css" rel="stylesheet">
+	<link href="http://localhost/assets/template/backend/css/newstyle.css" rel="stylesheet">
+	
+	<!-- Jquery Core Js -->
+	<script src="http://localhost/assets/template/backend/plugins/jquery/jquery.min.js"></script>
+	
+	<script type="text/javascript">
+	function site_url(url) {
+	return "http://localhost/" + url + '?' + new Date().getTime();
+	}
+	</script>
+	
+	<script src="http://localhost/assets/js/autoNumeric.js"></script>
+	<!-- Bootstrap Core Js -->
+	<script src="http://localhost/assets/template/backend/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="http://localhost/assets/template/backend/plugins/sweetalert/sweetalert.min.js"></script>
+	<!-- Data table -->
+	<script src="http://localhost/assets/js/jquery.treetable.js"></script>
+	<script src="http://localhost/assets/js/jquery.dataTables.min.js"></script>
+	<script src="http://localhost/assets/js/dataTables.fixedColumns.min.js"></script>
+	</head>
+	
+	<body class="theme-indigo">
+	<!-- Page Loader -->
+	<div class="page-loader-wrapper">
+	<div class="loader">
+	<div class="preloader">
+	<div class="spinner-layer pl-red">
+	<div class="circle-clipper left">
+	<div class="circle"></div>
+	</div>
+	<div class="circle-clipper right">
+	<div class="circle"></div>
+	</div>
+	</div>
+	</div>
+	<p>Please wait...</p>
+	</div>
+	</div>
+	<!-- #END# Page Loader -->
+	<!-- Overlay For Sidebars -->
+	<div class="overlay"></div>
+	<!-- #END# Overlay For Sidebars -->
+	<!-- Search Bar -->
+	<div class="search-bar">
+	<div class="search-icon">
+	<i class="material-icons">search</i>
+	</div>
+	<input type="text" placeholder="CARI RISIKO..." name="cari_risikoinput" id="cari_risikoinput">
+	<div class="close-search">
+	<i class="material-icons">close</i>
+	</div>
+	</div>
+	<!-- #END# Search Bar -->
+	<section>
+	<!-- Left Sidebar -->
+	<aside id="leftsidebar" class="sidebar">
+	<!-- User Info -->
+	<div class="user-info">
+	<div class="info-container noselect">
+	<div data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="cursor: pointer;">
+	<div class="name item-menu-expanded-new">Administrator-ASS. ANALYST BANG.TEK.INF.&ANLS BIS </div>
+	<div class="email item-menu-expanded-new">Administrator Aplikasi</div>
+	<div style="position: absolute;display: inline-block;right: 20px;top: 7px;color: #fff;">
+	<i class="material-icons item-menu-expanded-new">keyboard_arrow_down</i>
+	</div>
+	</div>
+	
+	<ul class="dropdown-menu dropdown-small dropdown-menu-right">
+	<li><a href="http://localhost/panelbackend/home/profile?1685092562"><i class="material-icons">person</i>Profile</a></li>
+	<li role="seperator" class="divider"></li>
+	
+	<li><a href="http://localhost/panelbackend/loginas?1685092562"><i class="material-icons">input</i>Login As</a></li>
+	
+	
+	<li><a href="http://localhost/panelbackend/login/logout?1685092562"><i class="material-icons">input</i>Sign Out</a></li>
+	</ul>
+	<div class="btn-group user-helper-dropdown" style="top: 5px;">
+	<i class="material-icons" data-toggle="toggle" aria-haspopup="true" aria-expanded="true" id="toggle-slider-sidebar-new">menu</i>
+	</div>
+	</div>
+	</div>
+	<!-- #User Info -->
+	<!-- Menu -->
+	<div class="menu">
+	
+	
+	<ul class="list">
+	<li class="li-menu-new active">
+	<a href='http://localhost/panelbackend/home' data-nama-menu='Dashboard Risiko'><i class='material-icons icon-material-icon'>dashboard</i> <span class='item-menu-expanded-new'>Dashboard Risiko</span></a>
+	</li>
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/risk_visi_misi' data-nama-menu='Visi & Misi'><i class='material-icons icon-material-icon'>domain</i> <span class='item-menu-expanded-new'>Visi & Misi</span></a>
+	</li>
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/risk_sasaran_strategis' data-nama-menu='Sasaran Strategis'><i class='material-icons icon-material-icon'>view_list</i> <span class='item-menu-expanded-new'>Sasaran Strategis</span></a>
+	</li>
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/risk_scorecard' data-nama-menu='Risk Register'><i class='material-icons icon-material-icon'>add_circle</i> <span class='item-menu-expanded-new'>Risk Register</span>&nbsp;&nbsp;<span class="bi bi-arrow-left tunjuk"></span></a>
+	</li>
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/kri' data-nama-menu='Dashboard KRI'><i class='material-icons icon-material-icon'>list</i> <span class='item-menu-expanded-new'>Dashboard KRI</span></a>
+	</li>
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/risk_status_risk' data-nama-menu='Status Risiko'><i class='material-icons icon-material-icon'>info</i> <span class='item-menu-expanded-new'>Status Risiko</span></a>
+	</li>
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/dmrk' data-nama-menu='Kajian Risiko'><i class='material-icons icon-material-icon'>description</i> <span class='item-menu-expanded-new'>Kajian Risiko</span></a>
+	</li>
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/loss_event' data-nama-menu='Loss Event'><i class='material-icons icon-material-icon'>new_releases</i> <span class='item-menu-expanded-new'>Loss Event</span></a>
+	</li>
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/reap' data-nama-menu='REAP'><i class='material-icons icon-material-icon'>sync_problem</i> <span class='item-menu-expanded-new'>REAP</span></a>
+	</li>
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/survey' data-nama-menu='Risk & Underwritter Survey'><i class='material-icons icon-material-icon'>assignment_late</i> <span class='item-menu-expanded-new'>Risk & Underwritter Survey</span></a>
+	</li>
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/bcms' data-nama-menu='BCMS'><i class='material-icons icon-material-icon'>business_center</i> <span class='item-menu-expanded-new'>BCMS</span></a>
+	</li>
+	<li class="li-menu-new ">
+	<a href='#' class='menu-toggle' data-nama-menu='Master'>
+	<i class='material-icons icon-material-icon'>view_comfy</i> <span class='item-menu-expanded-new'>Master</span>
+	</a>
+	
+	<ul class="ml-menu">
+	<li class="li-menu-new ">
+	<a href='#' class='menu-toggle' data-nama-menu='SDM'>
+	<i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>SDM</span>
+	</a>
+	
+	<ul class="ml-menu">
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/mt_sdm_jabatan_sync' data-nama-menu='Jabatan'><i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Jabatan</span></a>
+	</li>
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/mt_sdm_unit' data-nama-menu='Unit'><i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Unit</span></a>
+	</li>
+	</ul></li>
+	<li class="li-menu-new ">
+	<a href='#' class='menu-toggle' data-nama-menu='Risiko'>
+	<i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Risiko</span>
+	</a>
+	
+	<ul class="ml-menu">
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/mt_risk_kajian_risiko' data-nama-menu='Kategori Risiko'><i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Kategori Risiko</span></a>
+	</li>
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/mt_risk_dampak' data-nama-menu='Tingkat Dampak'><i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Tingkat Dampak</span></a>
+	</li>
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/mt_risk_kriteria_dampak' data-nama-menu='Kriteria Dampak (impact rating)'><i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Kriteria Dampak (impact rating)</span></a>
+	</li>
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/mt_risk_kemungkinan' data-nama-menu='Tingkat Kemungkinan'><i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Tingkat Kemungkinan</span></a>
+	</li>
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/mt_risk_tingkat' data-nama-menu='Tingkat Penanganan Risiko'><i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Tingkat Penanganan Risiko</span></a>
+	</li>
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/mt_risk_matrix' data-nama-menu='Matriks Risiko'><i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Matriks Risiko</span></a>
+	</li>
+	<li class="li-menu-new ">
+	<a href='#' class='menu-toggle' data-nama-menu='Efektifitas Kontrol'>
+	<i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Efektifitas Kontrol</span>
+	</a>
+	
+	<ul class="ml-menu">
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/mt_risk_efektifitas' data-nama-menu='Kriteria'><i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Kriteria</span></a>
+	</li>
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/mt_risk_efektifitas_jawaban' data-nama-menu='Jawaban'><i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Jawaban</span></a>
+	</li>
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/mt_risk_efektifitas_pengukuran' data-nama-menu='Pengukuran'><i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Pengukuran</span></a>
+	</li>
+	</ul></li>
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/mt_status_progress' data-nama-menu='Status Progress'><i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Status Progress</span></a>
+	</li>
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/mt_interval' data-nama-menu='Interval'><i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Interval</span></a>
+	</li>
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/risk_appetite' data-nama-menu='Risk Appetite'><i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Risk Appetite</span></a>
+	</li>
+	<li class="li-menu-new ">
+	<a href='#' class='menu-toggle' data-nama-menu='Efektifitas Mitigasi'>
+	<i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Efektifitas Mitigasi</span>
+	</a>
+	
+	<ul class="ml-menu">
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/mt_risk_efektif_m_pengukuran' data-nama-menu='Pengukuran'><i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Pengukuran</span></a>
+	</li>
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/mt_risk_efektif_m' data-nama-menu='Kriteria'><i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Kriteria</span></a>
+	</li>
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/mt_risk_efektif_m_jawaban' data-nama-menu='Jawaban'><i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Jawaban</span></a>
+	</li>
+	</ul></li>
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/mt_risk_taksonomi' data-nama-menu='Taksonomi'><i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Taksonomi</span></a>
+	</li>
+	</ul></li>
+	<li class="li-menu-new ">
+	<a href='#' class='menu-toggle' data-nama-menu='Risiko Fraud'>
+	<i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Risiko Fraud</span>
+	</a>
+	
+	<ul class="ml-menu">
+	<li class="li-menu-new ">
+	<a href='#' class='menu-toggle' data-nama-menu='Atribut Fraud'>
+	<i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Atribut Fraud</span>
+	</a>
+	
+	<ul class="ml-menu">
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/mt_pb_kategori' data-nama-menu='Kategori Proses Bisnis'><i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Kategori Proses Bisnis</span></a>
+	</li>
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/mt_fraud_jenis' data-nama-menu='Jenis Fraud'><i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Jenis Fraud</span></a>
+	</li>
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/mt_fraud_kategori' data-nama-menu='Kategori Fraud'><i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Kategori Fraud</span></a>
+	</li>
+	</ul></li>
+	<li class="li-menu-new ">
+	<a href='#' class='menu-toggle' data-nama-menu='Tingkat Risiko Fraud'>
+	<i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Tingkat Risiko Fraud</span>
+	</a>
+	
+	<ul class="ml-menu">
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/mt_fraud_kemungkinan_level' data-nama-menu='Level Kemungkinan'><i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Level Kemungkinan</span></a>
+	</li>
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/mt_fraud_kemungkinan_kriteria' data-nama-menu='Kriteria Kemungkinan'><i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Kriteria Kemungkinan</span></a>
+	</li>
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/mt_fraud_dampak' data-nama-menu='Tingkat Dampak'><i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Tingkat Dampak</span></a>
+	</li>
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/mt_fraud_dampak_level' data-nama-menu='Level Dampak'><i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Level Dampak</span></a>
+	</li>
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/mt_fraud_dampak_kriteria' data-nama-menu='Kriteria Dampak'><i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Kriteria Dampak</span></a>
+	</li>
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/mt_fraud_kemungkinan' data-nama-menu='Tingkat Kemungkinan'><i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Tingkat Kemungkinan</span></a>
+	</li>
+	</ul></li>
+	</ul></li>
+	<li class="li-menu-new ">
+	<a href='#' class='menu-toggle' data-nama-menu='Survey'>
+	<i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Survey</span>
+	</a>
+	
+	<ul class="ml-menu">
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/mt_jenis_survey' data-nama-menu='Jenis Survey'><i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Jenis Survey</span></a>
+	</li>
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/mt_pelaksana_survey' data-nama-menu='Pelaksana Survey'><i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Pelaksana Survey</span></a>
+	</li>
+	</ul></li>
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/mt_jenis_dmrk' data-nama-menu='Jenis DMRK'><i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Jenis DMRK</span></a>
+	</li>
+	</ul></li>
+	<li class="li-menu-new ">
+	<a href='#' class='menu-toggle' data-nama-menu='Laporan'>
+	<i class='material-icons icon-material-icon'>print</i> <span class='item-menu-expanded-new'>Laporan</span>
+	</a>
+	
+	<ul class="ml-menu">
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/laporan_kertas_kerja' data-nama-menu='Kertas Kerja'><i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Kertas Kerja</span></a>
+	</li>
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/laporan_risk_profile' data-nama-menu='Risk Profile'><i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Risk Profile</span></a>
+	</li>
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/laporan_kelengkapan' data-nama-menu='Pembaruan Risiko'><i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Pembaruan Risiko</span></a>
+	</li>
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/lmrk' data-nama-menu='LMREK Unit'><i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>LMREK Unit</span></a>
+	</li>
+	</ul></li>
+	<li class="li-menu-new ">
+	<a href='#' class='menu-toggle' data-nama-menu='Pengaturan'>
+	<i class='material-icons icon-material-icon'>settings</i> <span class='item-menu-expanded-new'>Pengaturan</span>
+	</a>
+	
+	<ul class="ml-menu">
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/public_sys_log' data-nama-menu='Log'><i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Log</span></a>
+	</li>
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/public_sys_setting' data-nama-menu='Konfigurasi'><i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Konfigurasi</span></a>
+	</li>
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/public_sys_user' data-nama-menu='User'><i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>User</span></a>
+	</li>
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/akses_jabatan' data-nama-menu='Akses Jabatan'><i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Akses Jabatan</span></a>
+	</li>
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/risk_msg' data-nama-menu='Pengumuman'><i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Pengumuman</span></a>
+	</li>
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/mt_periode_tw' data-nama-menu='Periode Triwulan'><i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Periode Triwulan</span></a>
+	</li>
+	<li class="li-menu-new ">
+	<a href='http://localhost/panelbackend/akses_role' data-nama-menu='Akses Role'><i class='material-icons icon-material-icon'></i> <span class='item-menu-expanded-new'>Akses Role</span></a>
+	</li>
+	</ul></li>
+	</ul> </div>
+	<!-- <div>
+	<img src="https://erm.ptpjb.com/assets/img/logo.jpg" alt="PJB Services" style="height: 40px;padding-left: 55px;">
+	</div> -->
+	
+	<!-- #Menu -->
+	</aside>
+	<!-- #END# Left Sidebar -->
+	</section>
+	
+	<section class="content" style="background-image: url(http://localhost/assets/img/bg-pjb.jpg);">
+	
+	<!-- Top Bar -->
+	<nav class="navbartheme">
+	<div class="container-fluid">
+	<a style="float: left; padding: 11px;" href="http://localhost/panelbackend/home/strategis?1685092562">
+	<!-- <img src="http://localhost/assets/img/logo-pjb-text.png" alt="PJB Services" style="height: 40px;"> -->
+	<!-- mengganti logo pjb jadi icare R-082614 24032021 start -->
+	<img src="http://localhost/assets/img/logo-icare.png" alt="PT.PJB" style="height: 40px;">
+	<!-- mengganti logo pjb jadi icare R-082614 24032021 start -->
+	</a>
+	<div class="navbar-header">
+	<a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+	<a href="javascript:void(0);" class="bars"></a>
+	
+	<a class="navbar-brand" href="http://localhost/panelbackend/home/strategis?1685092562">
+	INTEGRATED - COMPLIANCE, RISK MANAGEMENT, EFFECTIVE AND EFFICIENT OPERATION
+	</a>
+	</div>
+	
+	<div class="navbar-collapse" id="navbar-collapse">
+	<ul class="nav navbar-nav navbar-right">
+	<li style="margin-right: 10px;"><a href="javascript:void(0);" class="js-search" data-close="true"><i class="material-icons">search</i></a></li>
+	<!-- Call Search -->
+	<!-- Tasks -->
+	<li class="dropdown">
+	<a href="javascript:void(0);" class="dropdown" data-toggle="dropdown" role="button">
+	<i class="material-icons" style="font-size: 30px">flag</i>
+	<span class="label-count" id="task_count" style="color: #fff">20218</span>
+	</a>
+	<ul class="dropdown-menu dropdown-menu-right" style=" min-width: 500px;">
+	<li class="header">TASKS</li>
+	<li class="body">
+	<ul class="menu" id="task_data">
+	<li>
+	<a href="http://localhost/panelbackend/home/task/39378?1685092562">
+	<div class="icon-circle bg-green">
+	<i class="material-icons">done</i>
+	</div>
+	<div class="menu-info">
+	<p class="info"><b><i>DMRK : Analisa risiko perdir. <br/>Mohon di perbaiki</i></b></p>
+	<p>
+	<i class="material-icons">access_time</i> Jum'at, 02 Desember 2022 10:08:01 <i class="material-icons">account_circle</i> Assistant Analyst Manajemen Risiko (Koordinator) </p>
+	</div>
+	</a>
+	</li>
+	<li>
+	<a href="http://localhost/panelbackend/home/task/39377?1685092562">
+	<div class="icon-circle bg-green">
+	<i class="material-icons">done</i>
+	</div>
+	<div class="menu-info">
+	<p class="info"><b><i>DMRK : abcd. <br/>Dokumen sudah ok</i></b></p>
+	<p>
+	<i class="material-icons">access_time</i> Jum'at, 02 Desember 2022 09:44:20 <i class="material-icons">account_circle</i> Assistant Analyst Manajemen Risiko (Koordinator) </p>
+	</div>
+	</a>
+	</li>
+	<li>
+	<a href="http://localhost/panelbackend/home/task/39376?1685092562">
+	<div class="icon-circle bg-green">
+	<i class="material-icons">done</i>
+	</div>
+	<div class="menu-info">
+	<p class="info"><b><i>DMRK : DMRK Kontrak Pembangkit. <br/>Dokumen sudah ok</i></b></p>
+	<p>
+	<i class="material-icons">access_time</i> Jum'at, 02 Desember 2022 09:31:16 <i class="material-icons">account_circle</i> Kepala Bidang Kepatuhan (Koordinator) </p>
+	</div>
+	</a>
+	</li>
+	<li>
+	<a href="http://localhost/panelbackend/home/task/39375?1685092562">
+	<div class="icon-circle bg-green">
+	<i class="material-icons">done</i>
+	</div>
+	<div class="menu-info">
+	<p class="info"><b><i>DMRK : DMRK Kontrak Pembangkit. <br/>Dokumen sudah ok dan bisa proses ttd</i></b></p>
+	<p>
+	<i class="material-icons">access_time</i> Jum'at, 02 Desember 2022 09:23:12 <i class="material-icons">account_circle</i> Assistant Analyst Manajemen Risiko (Koordinator) </p>
+	</div>
+	</a>
+	</li>
+	<li>
+	<a href="http://localhost/panelbackend/home/task/39373?1685092562">
+	<div class="icon-circle bg-red">
+	<i class="material-icons">backspace</i>
+	</div>
+	<div class="menu-info">
+	<p class="info"><b><i>DMRK : DMRK Kontrak Pembangkit. <br/>Mohon dilakukan perbaikan sesuai dengan catatan</i></b></p>
+	<p>
+	<i class="material-icons">access_time</i> Jum'at, 02 Desember 2022 09:18:08 <i class="material-icons">account_circle</i> Assistant Analyst Manajemen Risiko (Koordinator) </p>
+	</div>
+	</a>
+	</li>
+	<li>
+	<a href="http://localhost/panelbackend/home/task/39370?1685092562">
+	<div class="icon-circle bg-red">
+	<i class="material-icons">backspace</i>
+	</div>
+	<div class="menu-info">
+	<p class="info"><b><i>DMRK : DMRK Pembangkitan. <br/>Mohon diperbaiki sesuai dengan catatan</i></b></p>
+	<p>
+	<i class="material-icons">access_time</i> Jum'at, 02 Desember 2022 09:09:25 <i class="material-icons">account_circle</i> Assistant Analyst Manajemen Risiko (Koordinator) </p>
+	</div>
+	</a>
+	</li>
+	<li>
+	<a href="http://localhost/panelbackend/home/task/39352?1685092562">
+	<div class="icon-circle bg-green">
+	<i class="material-icons">done</i>
+	</div>
+	<div class="menu-info">
+	<p class="info">Belum tersertifikasi seluruh karyawan terkait manajemen risiko<br/><i>approval</i></p>
+	<p>
+	<i class="material-icons">access_time</i> Selasa, 05 Juli 2022 10:19:21 <i class="material-icons">account_circle</i> Assistant Analyst Manajemen Risiko (Risk Owner) </p>
+	</div>
+	</a>
+	</li>
+	<li>
+	<a href="http://localhost/panelbackend/home/task/39349?1685092562">
+	<div class="icon-circle bg-orange">
+	<i class="material-icons">flag</i>
+	</div>
+	<div class="menu-info">
+	<p class="info">Belum tersertifikasi seluruh karyawan terkait manajemen risiko<br/><i>mohon review dan approval</i></p>
+	<p>
+	<i class="material-icons">access_time</i> Selasa, 05 Juli 2022 09:51:56 <i class="material-icons">account_circle</i> Assistant Analyst Manajemen Risiko (Koordinator) </p>
+	</div>
+	</a>
+	</li>
+	<li>
+	<a href="http://localhost/panelbackend/home/task/39330?1685092562">
+	<div class="icon-circle bg-green">
+	<i class="material-icons">done</i>
+	</div>
+	<div class="menu-info">
+	<p class="info"><b>Identifikasi risiko<br/><i>Risk Owner menyetujui</i></b></p>
+	<p>
+	<i class="material-icons">access_time</i> Senin, 06 Juni 2022 09:34:13 <i class="material-icons">account_circle</i> Kepala Bidang Teknologi Informasi (Risk Owner) </p>
+	</div>
+	</a>
+	</li>
+	<li>
+	<a href="http://localhost/panelbackend/home/task/39329?1685092562">
+	<div class="icon-circle bg-orange">
+	<i class="material-icons">flag</i>
+	</div>
+	<div class="menu-info">
+	<p class="info">Identifikasi risiko<br/><i>approve koordinator</i></p>
+	<p>
+	<i class="material-icons">access_time</i> Senin, 06 Juni 2022 09:32:57 <i class="material-icons">account_circle</i> Analyst Manajemen Risiko (Koordinator) </p>
+	</div>
+	</a>
+	</li>
+	</ul>
+	</li>
+	<li class="footer">
+	<a href="http://localhost/panelbackend/risk_task?1685092562">View All Tasks</a>
+	</li>
+	</ul>
+	</li>
+	<li class="dropdown">
+	<a href="javascript:void(0);" class="dropdown" data-toggle="dropdown" role="button" aria-expanded="true">
+	<i class="material-icons" style="font-size: 30px">help</i>
+	</a>
+	<ul class="dropdown-menu dropdown-menu-right" style="min-width: 150px !important;">
+	<li class="header">HELP</li>
+	<li class="body">
+	<a target="_blank" href="http://localhost/panelbackend/home/wf?1685092562">
+	<div class="menu-info">
+	<i class="material-icons">show_chart</i>
+	WORK FLOW
+	</div>
+	</a>
+	<a target="_blank" href="http://localhost/panelbackend/home/ug?1685092562">
+	<div class="menu-info">
+	<i class="material-icons">book</i>
+	USER GUIDE
+	</div>
+	</a>
+	
+	</li>
+	</ul>
+	</li>
+	</ul>
+	</div>
+	</div>
+	</nav>
+	<!-- #Top Bar -->
+	<form method="post" enctype="multipart/form-data" id="main_form" class="form-horizontal">
+	<input type="hidden" name="act" id="act" />
+	<input type="hidden" name="go" id="go" />
+	<input type="hidden" name="key" id="key" />
+	<input type="hidden" name="cari_risiko" id="cari_risiko" />
+	<div class="container-fluid">
+	<!-- Basic Table -->
+	
+	<div class="block-header home">
+	<div class="float-left" style="width: auto;">
+	<div class="form-line"><select data-placeholder="-Kategori-" tabindex="2" name="id_kajian_risiko_filter" id="id_kajian_risiko_filter" class="form-control" style='width:250px !important; display:inline' onchange='goSubmit("set_filter")'>
+	<option value="">-Kategori-</option>
+	<option value="2">Profil Risiko Corporate/Unit (Jangka Panjang / RJPP / RJPU)</option>
+	<option value="3" selected>Profil Risiko Corporate/Unit (Jangka Pendek / RKAP / RKAU)</option>
+	<option value="4">Risiko Operasional Divisi / Bidang / Unit</option>
+	<option value="5">Risiko Proyek</option>
+	<option value="28">Risiko Fraud</option>
+	</select></div> <div class="form-line"><select data-placeholder="-Sub kategori-" tabindex="2" name="id_scorecard_filter" id="id_scorecard_filter" class="form-control select2" style='width:200px !important; display:inline' onchange='goSubmit("set_filter")'>
+	<option value="" selected>-Sub kategori-</option>
+	<option value="500">Profil Risiko Unit Pengembangan Usaha</option>
+	<option value="503">Profil Risiko UBJOM Arun</option>
+	<option value="504">Profil Risiko UBJOM Indramayu</option>
+	<option value="505">Profil Risiko UBJOM Kaltim Teluk</option>
+	<option value="507">Profil Risiko UBJOM Pacitan</option>
+	<option value="508">Profil Risiko UBJOM Paiton</option>
+	<option value="509">Profil Risiko UBJOM Pulang Pisau</option>
+	<option value="510">Profil Risiko UBJOM Rembang</option>
+	<option value="511">Profil Risiko UBJOM Tanjung Awar-Awar</option>
+	<option value="512">Profil Risiko UBJOM Tenayan</option>
+	<option value="513">Profil Risiko UP Brantas</option>
+	<option value="514">Profil Risiko UP Cirata</option>
+	<option value="515">Profil Risiko UP Gresik</option>
+	<option value="516">Profil Risiko UP Muara Karang</option>
+	<option value="517">Profil Risiko UP Muara Tawar</option>
+	<option value="518">Profil Risiko UP Paiton</option>
+	<option value="519">Profil Risiko UPHB</option>
+	<option value="520">Profil Risiko UPHT</option>
+	<option value="1904">Profil Risiko PJB Academy</option>
+	<option value="2736">Profil Risiko Korporat</option>
+	<option value="3100">Profil Risiko UMRO</option>
+	<option value="3182">Profil Risiko UBJOM Sambelia</option>
+	</select></div> <div class="form-line"><select data-placeholder="-Taksonomi-" tabindex="2" name="id_taksonomi_objective_filter" id="id_taksonomi_objective_filter" class="form-control" style='width:auto !important; display:inline' onchange='goSubmit("set_filter")'>
+	<option value="" selected>-Taksonomi-</option>
+	<option value="1">STRATEGIS</option>
+	<option value="2">FINANSIAL</option>
+	<option value="3">OPERASIONAL</option>
+	<option value="4">PROYEK</option>
+	<option value="5">KEPATUHAN</option>
+	</select></div> <div class="form-line"><select data-placeholder="-Tingkat delegasi risiko-" tabindex="2" name="id_tingkat_agregasi_risiko_filter" id="id_tingkat_agregasi_risiko_filter" class="form-control" style='width:auto !important; display:inline' onchange='goSubmit("set_filter")'>
+	<option value="">-Tingkat delegasi risiko-</option>
+	<option value="2" selected>RKAP/RJPU</option>
+	<option value="3">Unit/Divisi/Bidang/RKAU</option>
+	</select></div>
+	</div>
+	<div class="float-right">
+	<div class="form-line"><input type="number" step="1" name="tahun_filter" id="tahun_filter" value="2022" class="form-control" maxlength="4" size="4" style='width:80px; display:inline' onchange='goSubmit("set_filter")'></div> <div class="form-line"><select data-placeholder="-pilih-" tabindex="2" name="id_periode_tw_filter" id="id_periode_tw_filter" class="form-control" style='width:120px !important; display:inline' onchange='goSubmit("set_filter")'>
+	<option value="">-pilih-</option>
+	<option value="1">Triwulan 1</option>
+	<option value="2" selected>Triwulan 2</option>
+	<option value="3">Triwulan 3</option>
+	<option value="4">Triwulan 4</option>
+	</select></div> </div>
+	<div style="clear: both;"></div>
+	</div>
+	
+	
+	<div class="row clearfix" style="position: relative;">
+	<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+	<div class="card card-dashboard">
+	<div class="header" style="text-align: center">
+	<h2 class="dark-tooltip" data-toggle="tooltip" title="Risiko yang melekat karena karateristik dan sifat lainya">RISIKO MELEKAT/AWAL
+	</h2><label hidden>123123</label>
+	</div>
+	<div class="body">
+	<div id="donut_chart1" class="dashboard-donut-chart"></div>
+	</div>
+	</div>
+	</div>
+	<span class="bi bi-arrow-right panah panah1" style="background-image: url(http://localhost/assets/img/panah.png);"></span>
+	<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+	<div class="card card-dashboard">
+	<div class="header" style="text-align: center">
+	<h2 class="dark-tooltip" data-toggle="tooltip" title="Risiko yang tertinggi setelah dilakukan penanganan/control dengan program telah ada sebelumnya">RISIKO TERKONTROL
+	</h2>
+	</div>
+	<div class="body">
+	<div id="donut_chart2" class="dashboard-donut-chart"></div>
+	</div>
+	</div>
+	</div>
+	<span class="bi bi-arrow-right panah panah2" style="background-image: url(http://localhost/assets/img/panah.png);"></span>
+	<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+	<div class="card card-dashboard">
+	<div class="header" style="text-align: center">
+	<h2 class="dark-tooltip" data-toggle="tooltip" title="">RISIKO AKTUAL/RESIDU
+	</h2>
+	</div>
+	<div class="body">
+	<div id="donut_chart3" class="dashboard-donut-chart"></div>
+	</div>
+	</div>
+	</div>
+	<span class="bi bi-arrow-right panah panah3" style="background-image: url(http://localhost/assets/img/panah.png);"></span>
+	<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+	<div class="card card-dashboard">
+	<div class="header" style="text-align: center">
+	<h2 class="dark-tooltip" data-toggle="tooltip" title="Risiko yang tertinggi setelah dilakukan tindakan mitigasi risiko">RISIKO TARGET
+	</h2>
+	</div>
+	<div class="body">
+	<div id="donut_chart4" class="dashboard-donut-chart"></div>
+	</div>
+	</div>
+	</div>
+	</div>
+	
+	
+	<div class="row clearfix">
+	<div class="col-xs-12 col-sm-12">
+	<div class="card card-dashboard">
+	<div class="header">
+	<!-- <a class="button6" data-toggle="collapse" data-target="#filter">FILTER</a>
+	<h1 style="margin: 0px; text-align: center; margin-top: -40px;">TOP RISIKO</h1> -->
+	<center>
+	<H1 style="margin: 0px">TOP
+	<div class="form-line"><select data-placeholder="-top-" tabindex="2" name="top_filter" id="top_filter" class="form-control" style='width:auto !important; display:inline' onchange='goSubmit("set_filter")'>
+	<option value="">-top-</option>
+	<option value="10" selected>10</option>
+	<option value="20">20</option>
+	<option value="30">30</option>
+	<option value="50">50</option>
+	<option value="100">100</option>
+	</select></div> RISIKO</H1>
+	</center>
+	</div>
+	<div class="body" style="padding: 15px 8px;">
+	<div class="row">
+	<div class="col-sm-12 col-lg-4 widthmtrix c-4" style="padding: 0px 7px !important; height: fit-content">
+	<div style="text-align: center; margin-top: 10px;position: inherit; width:fit-content; margin: auto; height:fit-content">
+	<div id="divmatrix" style="text-align: left; width:500px;">
+	
+	<table class="tbmatrix">
+	<tr><tr><td rowspan='5' style='font-weight:bold;position:relative;width:25px'><div style='position:absolute;right: 19px;top: 260px;width: 0px;-ms-transform: rotate(-90deg);-webkit-transform: rotate(-90deg);transform: rotate(-90deg);height: 0px;word-wrap: normal;'>TINGKAT&nbsp;KEMUNGKINAN</div></td><td align='center' style='width: 25px;text-align:center;vertical-align:middle;font-weight:bold'>Sangat Besar</td><td style='width: 25px;text-align:center;font-weight:bold;vertical-align:middle'>E</td><td class='bg-#2196f3' style='border:1px solid #555;background-color:#2196f3; padding:1px;' height='75px' width='75px' align='center' valign='middle'><div style='position:relative;height:75px;width:75px; vertical-align:middle; text-align:center;padding:30px 0px;'>Moderat
+	<div style='position:absolute;top:5px;right:5px;'></div></div></td><td class='bg-#2196f3' style='border:1px solid #555;background-color:#2196f3; padding:1px;' height='75px' width='75px' align='center' valign='middle'><div style='position:relative;height:75px;width:75px; vertical-align:middle; text-align:center;padding:30px 0px;'>Moderat
+	<div style='position:absolute;top:5px;right:5px;'></div></div></td><td class='bg-#ffe94d' style='border:1px solid #555;background-color:#ffe94d; padding:1px;border-left:7px dotted #000 !important;' height='75px' width='75px' align='center' valign='middle'><div style='position:relative;height:75px;width:75px; vertical-align:middle; text-align:center;padding:30px 0px;'>Tinggi
+	<div style='position:absolute;top:5px;right:5px;'></div></div></td><td class='bg-#FF7F25' style='border:1px solid #555;background-color:#FF7F25; padding:1px;' height='75px' width='75px' align='center' valign='middle'><div style='position:relative;height:75px;width:75px; vertical-align:middle; text-align:center;padding:30px 0px;'>Sangat Tinggi
+	<div style='position:absolute;top:5px;right:5px;'><div style='font-size: 10px;width:17px;height:17px;float:left;padding:1px;margin:2px;background-color:#fff;border:1px solid black;color:black;' class='dot'>1</div><div style='font-size: 10px;width:17px;height:17px;float:left;padding:1px;margin:2px;background-color:#fff;border:1px solid black;color:black;' class='dot'>2</div><div style='font-size: 10px;width:17px;height:17px;float:left;padding:1px;margin:2px;background-color:#fff;border:1px solid black;color:black;' class='dot'>3</div><div style='font-size: 10px;width:17px;height:17px;float:left;padding:1px;margin:2px;background-color:#fff;border:1px solid black;color:black;' class='dot'>4</div><div style='font-size: 10px;width:17px;height:17px;float:left;padding:1px;margin:2px;background-color:#fff;border:1px solid black;color:black;' class='dot'>5</div></div></div></td><td class='bg-#F14236' style='border:1px solid #555;background-color:#F14236; padding:1px;' height='75px' width='75px' align='center' valign='middle'><div style='position:relative;height:75px;width:75px; vertical-align:middle; text-align:center;padding:30px 0px;'>Ekstrem
+	<div style='position:absolute;top:5px;right:5px;'><div style='font-size: 10px;width:17px;height:17px;float:left;padding:1px;margin:2px;background-color:#fff;border:1px solid black;color:black;' class='dot'>6</div><div style='font-size: 10px;width:17px;height:17px;float:left;padding:1px;margin:2px;background-color:#666;border:1px solid black;color:#black;' class='dot zoom-loop'>1</div></div></div></td></tr><td align='center' style='width: 25px;text-align:center;vertical-align:middle;font-weight:bold'>Besar</td><td style='width: 25px;text-align:center;font-weight:bold;vertical-align:middle'>D</td><td class='bg-#58b051' style='border:1px solid #555;background-color:#58b051; padding:1px;' height='75px' width='75px' align='center' valign='middle'><div style='position:relative;height:75px;width:75px; vertical-align:middle; text-align:center;padding:30px 0px;'>Rendah
+	<div style='position:absolute;top:5px;right:5px;'></div></div></td><td class='bg-#2196f3' style='border:1px solid #555;background-color:#2196f3; padding:1px;' height='75px' width='75px' align='center' valign='middle'><div style='position:relative;height:75px;width:75px; vertical-align:middle; text-align:center;padding:30px 0px;'>Moderat
+	<div style='position:absolute;top:5px;right:5px;'></div></div></td><td class='bg-#ffe94d' style='border:1px solid #555;background-color:#ffe94d; padding:1px;border-left:7px dotted #000 !important;' height='75px' width='75px' align='center' valign='middle'><div style='position:relative;height:75px;width:75px; vertical-align:middle; text-align:center;padding:30px 0px;'>Tinggi
+	<div style='position:absolute;top:5px;right:5px;'><div style='font-size: 10px;width:17px;height:17px;float:left;padding:1px;margin:2px;background-color:#666;border:1px solid black;color:#black;' class='dot zoom-loop'>7</div></div></div></td><td class='bg-#FF7F25' style='border:1px solid #555;background-color:#FF7F25; padding:1px;' height='75px' width='75px' align='center' valign='middle'><div style='position:relative;height:75px;width:75px; vertical-align:middle; text-align:center;padding:30px 0px;'>Sangat Tinggi
+	<div style='position:absolute;top:5px;right:5px;'><div style='font-size: 10px;width:17px;height:17px;float:left;padding:1px;margin:2px;background-color:#fff;border:1px solid black;color:black;' class='dot'>7</div><div style='font-size: 10px;width:17px;height:17px;float:left;padding:1px;margin:2px;background-color:#fff;border:1px solid black;color:black;' class='dot'>8</div><div style='font-size: 10px;width:17px;height:17px;float:left;padding:1px;margin:2px;background-color:#fff;border:1px solid black;color:black;' class='dot'>9</div><div style='font-size: 10px;width:17px;height:17px;float:left;padding:1px;margin:2px;background-color:#fff;border:1px solid black;color:black;' class='dot'>10</div><div style='font-size: 10px;width:17px;height:17px;float:left;padding:1px;margin:2px;background-color:#666;border:1px solid black;color:#black;' class='dot zoom-loop'>2</div><div style='font-size: 10px;width:17px;height:17px;float:left;padding:1px;margin:2px;background-color:#666;border:1px solid black;color:#black;' class='dot zoom-loop'>3</div></div></div></td><td class='bg-#F14236' style='border:1px solid #555;background-color:#F14236; padding:1px;' height='75px' width='75px' align='center' valign='middle'><div style='position:relative;height:75px;width:75px; vertical-align:middle; text-align:center;padding:30px 0px;'>Ekstrem
+	<div style='position:absolute;top:5px;right:5px;'></div></div></td></tr><td align='center' style='width: 25px;text-align:center;vertical-align:middle;font-weight:bold'>Sedang</td><td style='width: 25px;text-align:center;font-weight:bold;vertical-align:middle'>C</td><td class='bg-#58b051' style='border:1px solid #555;background-color:#58b051; padding:1px;' height='75px' width='75px' align='center' valign='middle'><div style='position:relative;height:75px;width:75px; vertical-align:middle; text-align:center;padding:30px 0px;'>Rendah
+	<div style='position:absolute;top:5px;right:5px;'></div></div></td><td class='bg-#2196f3' style='border:1px solid #555;background-color:#2196f3; padding:1px;' height='75px' width='75px' align='center' valign='middle'><div style='position:relative;height:75px;width:75px; vertical-align:middle; text-align:center;padding:30px 0px;'>Moderat
+	<div style='position:absolute;top:5px;right:5px;'><div style='font-size: 10px;width:17px;height:17px;float:left;padding:1px;margin:2px;background-color:black;border:1px solid black;color:#fff;' class='dot'>1</div><div style='font-size: 10px;width:17px;height:17px;float:left;padding:1px;margin:2px;background-color:black;border:1px solid black;color:#fff;' class='dot'>7</div><div style='font-size: 10px;width:17px;height:17px;float:left;padding:1px;margin:2px;background-color:black;border:1px solid black;color:#fff;' class='dot'>9</div><div style='font-size: 10px;width:17px;height:17px;float:left;padding:1px;margin:2px;background-color:black;border:1px solid black;color:#fff;' class='dot'>10</div></div></div></td><td class='bg-#ffe94d' style='border:1px solid #555;background-color:#ffe94d; padding:1px;border-left:7px dotted #000 !important;border-bottom:7px dotted #000 !important;' height='75px' width='75px' align='center' valign='middle'><div style='position:relative;height:75px;width:75px; vertical-align:middle; text-align:center;padding:30px 0px;'>Tinggi
+	<div style='position:absolute;top:5px;right:5px;'><div style='font-size: 10px;width:17px;height:17px;float:left;padding:1px;margin:2px;background-color:#666;border:1px solid black;color:#black;' class='dot zoom-loop'>8</div><div style='font-size: 10px;width:17px;height:17px;float:left;padding:1px;margin:2px;background-color:#666;border:1px solid black;color:#black;' class='dot zoom-loop'>9</div><div style='font-size: 10px;width:17px;height:17px;float:left;padding:1px;margin:2px;background-color:#666;border:1px solid black;color:#black;' class='dot zoom-loop'>10</div></div></div></td><td class='bg-#ffe94d' style='border:1px solid #555;background-color:#ffe94d; padding:1px;' height='75px' width='75px' align='center' valign='middle'><div style='position:relative;height:75px;width:75px; vertical-align:middle; text-align:center;padding:30px 0px;'>Tinggi
+	<div style='position:absolute;top:5px;right:5px;'><div style='font-size: 10px;width:17px;height:17px;float:left;padding:1px;margin:2px;background-color:#666;border:1px solid black;color:#black;' class='dot zoom-loop'>4</div><div style='font-size: 10px;width:17px;height:17px;float:left;padding:1px;margin:2px;background-color:#666;border:1px solid black;color:#black;' class='dot zoom-loop'>5</div><div style='font-size: 10px;width:17px;height:17px;float:left;padding:1px;margin:2px;background-color:#666;border:1px solid black;color:#black;' class='dot zoom-loop'>6</div></div></div></td><td class='bg-#FF7F25' style='border:1px solid #555;background-color:#FF7F25; padding:1px;' height='75px' width='75px' align='center' valign='middle'><div style='position:relative;height:75px;width:75px; vertical-align:middle; text-align:center;padding:30px 0px;'>Sangat Tinggi
+	<div style='position:absolute;top:5px;right:5px;'></div></div></td></tr><td align='center' style='width: 25px;text-align:center;vertical-align:middle;font-weight:bold'>Kecil</td><td style='width: 25px;text-align:center;font-weight:bold;vertical-align:middle'>B</td><td class='bg-#58b051' style='border:1px solid #555;background-color:#58b051; padding:1px;' height='75px' width='75px' align='center' valign='middle'><div style='position:relative;height:75px;width:75px; vertical-align:middle; text-align:center;padding:30px 0px;'>Rendah
+	<div style='position:absolute;top:5px;right:5px;'></div></div></td><td class='bg-#58b051' style='border:1px solid #555;background-color:#58b051; padding:1px;' height='75px' width='75px' align='center' valign='middle'><div style='position:relative;height:75px;width:75px; vertical-align:middle; text-align:center;padding:30px 0px;'>Rendah
+	<div style='position:absolute;top:5px;right:5px;'></div></div></td><td class='bg-#2196f3' style='border:1px solid #555;background-color:#2196f3; padding:1px;' height='75px' width='75px' align='center' valign='middle'><div style='position:relative;height:75px;width:75px; vertical-align:middle; text-align:center;padding:30px 0px;'>Moderat
+	<div style='position:absolute;top:5px;right:5px;'><div style='font-size: 10px;width:17px;height:17px;float:left;padding:1px;margin:2px;background-color:black;border:1px solid black;color:#fff;' class='dot'>2</div><div style='font-size: 10px;width:17px;height:17px;float:left;padding:1px;margin:2px;background-color:black;border:1px solid black;color:#fff;' class='dot'>3</div><div style='font-size: 10px;width:17px;height:17px;float:left;padding:1px;margin:2px;background-color:black;border:1px solid black;color:#fff;' class='dot'>4</div><div style='font-size: 10px;width:17px;height:17px;float:left;padding:1px;margin:2px;background-color:black;border:1px solid black;color:#fff;' class='dot'>5</div><div style='font-size: 10px;width:17px;height:17px;float:left;padding:1px;margin:2px;background-color:black;border:1px solid black;color:#fff;' class='dot'>6</div><div style='font-size: 10px;width:17px;height:17px;float:left;padding:1px;margin:2px;background-color:black;border:1px solid black;color:#fff;' class='dot'>8</div></div></div></td><td class='bg-#ffe94d' style='border:1px solid #555;background-color:#ffe94d; padding:1px;border-left:7px dotted #000 !important;' height='75px' width='75px' align='center' valign='middle'><div style='position:relative;height:75px;width:75px; vertical-align:middle; text-align:center;padding:30px 0px;'>Tinggi
+	<div style='position:absolute;top:5px;right:5px;'></div></div></td><td class='bg-#FF7F25' style='border:1px solid #555;background-color:#FF7F25; padding:1px;' height='75px' width='75px' align='center' valign='middle'><div style='position:relative;height:75px;width:75px; vertical-align:middle; text-align:center;padding:30px 0px;'>Sangat Tinggi
+	<div style='position:absolute;top:5px;right:5px;'></div></div></td></tr><td align='center' style='width: 25px;text-align:center;vertical-align:middle;font-weight:bold'>Sangat Kecil</td><td style='width: 25px;text-align:center;font-weight:bold;vertical-align:middle'>A</td><td class='bg-#58b051' style='border:1px solid #555;background-color:#58b051; padding:1px;' height='75px' width='75px' align='center' valign='middle'><div style='position:relative;height:75px;width:75px; vertical-align:middle; text-align:center;padding:30px 0px;'>Rendah
+	<div style='position:absolute;top:5px;right:5px;'></div></div></td><td class='bg-#58b051' style='border:1px solid #555;background-color:#58b051; padding:1px;' height='75px' width='75px' align='center' valign='middle'><div style='position:relative;height:75px;width:75px; vertical-align:middle; text-align:center;padding:30px 0px;'>Rendah
+	<div style='position:absolute;top:5px;right:5px;'></div></div></td><td class='bg-#2196f3' style='border:1px solid #555;background-color:#2196f3; padding:1px;' height='75px' width='75px' align='center' valign='middle'><div style='position:relative;height:75px;width:75px; vertical-align:middle; text-align:center;padding:30px 0px;'>Moderat
+	<div style='position:absolute;top:5px;right:5px;'></div></div></td><td class='bg-#ffe94d' style='border:1px solid #555;background-color:#ffe94d; padding:1px;border-left:7px dotted #000 !important;' height='75px' width='75px' align='center' valign='middle'><div style='position:relative;height:75px;width:75px; vertical-align:middle; text-align:center;padding:30px 0px;'>Tinggi
+	<div style='position:absolute;top:5px;right:5px;'></div></div></td><td class='bg-#ffe94d' style='border:1px solid #555;background-color:#ffe94d; padding:1px;' height='75px' width='75px' align='center' valign='middle'><div style='position:relative;height:75px;width:75px; vertical-align:middle; text-align:center;padding:30px 0px;'>Tinggi
+	<div style='position:absolute;top:5px;right:5px;'></div></div></td></tr></tr><tr><td colspan='3' rowspan='3'></td><td style='font-weight:bold;text-align:center'>1</td><td style='font-weight:bold;text-align:center'>2</td><td style='font-weight:bold;text-align:center'>3</td><td style='font-weight:bold;text-align:center'>4</td><td style='font-weight:bold;text-align:center'>5</td></tr><tr><td style='font-weight:bold;text-align:center;vertical-align:middle'>Tidak Signifikan</td><td style='font-weight:bold;text-align:center;vertical-align:middle'>Minor</td><td style='font-weight:bold;text-align:center;vertical-align:middle'>Medium</td><td style='font-weight:bold;text-align:center;vertical-align:middle'>Signifikan</td><td style='font-weight:bold;text-align:center;vertical-align:middle'>Sangat Signifikan</td></tr><tr><td colspan='5' style='font-weight:bold;text-align:center'>TINGKAT DAMPAK</td></tr> </table>
+	
+	<table style="width:auto;margin-top:10px;background:#fff">
+	<tbody>
+	
+	<tr>
+	<td style="width:100px;background-color:#fff;border:2px solid black;"></td>
+	<td style="font-size: 12px;">&nbsp;RISIKO MELEKAT/AWAL</td>
+	</tr>
+	
+	<tr>
+	<td style="width:100px;background-color:#777;border:2px solid black;"></td>
+	<td style="font-size: 12px">&nbsp;RISIKO AKTUAL/RISIKO RESIDU</td>
+	</tr>
+	<tr>
+	<td style="width:100px;background-color:black;border:2px solid black;"></td>
+	<td style="font-size: 12px">&nbsp;RISIKO TARGET</td>
+	</tr>
+	</tbody>
+	</table>
+	
+	</div>
+	<a href="" id="downloadmatrix" download="matrix.png" class="btn btn-sm btn-success" style="position: absolute; right:0px; bottom: 0px;"><span class="bi bi-upload"></span> Save Matriks</a>
+	
+	</div>
+	<style type="text/css">
+	.tooltip-inner {
+	white-space: pre-wrap;
+	}
+	
+	.light-tooltip+.tooltip>.tooltip-inner {
+	background-color: #fff !important;
+	border: 1px solid #000;
+	}
+	
+	.dark-tooltip+.tooltip>.tooltip-inner {
+	background-color: #000c !important;
+	border: 1px solid #000c;
+	}
+	</style>
+	<script src="http://localhost/assets/js/html2canvas.js"></script>
+	<script src="http://localhost/assets/js/canvas2image.js"></script>
+	<script type="text/javascript">
+	$(function() {
+	html2canvas($("#divmatrix"), {
+	onrendered: function(canvas) {
+	// Canvas2Image.saveAsPNG(canvas);
+	var image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"); // here is the most important part because if you dont replace you will get a DOM 18 exception.
+	
+	$("#downloadmatrix").attr("href", image);
+	/* var a = $("#linkmatrix");
+	a.attr("href",image);
+	a.attr("target","_blank");
+	a.attr("download","MATRIX.png");
+	var a = document.createElement('a');
+	a.href = image;
+	a.target = "_blank";
+	a.download = 'MATRIX.png';
+	a.click();*/
+	},
+	width: 600,
+	height: 600
+	});
+	})
+	/* function saveimage(){
+	}*/
+	</script>
+	<script type="text/javascript">
+	//data-html="true"
+	// $('[data-toggle="tooltip"]').tooltip({
+	// container: 'body'
+	// });
+	$('[rel=tooltip]').tooltip()
+	</script>
+	
+	<style type="text/css">
+	.zoom-loop {
+	-webkit-animation: myzoom 0.3s;
+	/* Safari 4.0 - 8.0 */
+	animation: myzoom 0.3s;
+	-webkit-animation-iteration-count: infinite;
+	/* Safari 4.0 - 8.0 */
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	-webkit-animation-direction: alternate;
+	/* Safari 4.0 - 8.0 */
+	}
+	
+	.zoom-1 {
+	-webkit-animation: myzooma 3s;
+	/* Safari 4.0 - 8.0 */
+	-webkit-animation-iteration-count: infinite;
+	/* Safari 4.0 - 8.0 */
+	animation: myzooma 3s;
+	animation-iteration-count: infinite;
+	}
+	
+	.zoom-2 {
+	-webkit-animation: myzoomb 3s;
+	/* Safari 4.0 - 8.0 */
+	-webkit-animation-iteration-count: infinite;
+	/* Safari 4.0 - 8.0 */
+	animation: myzoomb 3s;
+	animation-iteration-count: infinite;
+	}
+	
+	.zoom-3 {
+	-webkit-animation: myzoomz 3s;
+	/* Safari 4.0 - 8.0 */
+	-webkit-animation-iteration-count: infinite;
+	/* Safari 4.0 - 8.0 */
+	animation: myzoomz 3s;
+	animation-iteration-count: infinite;
+	}
+	
+	@-webkit-keyframes myzoom {
+	0% {
+	background-color: #666;
+	}
+	
+	100% {
+	background-color: #ccc;
+	}
+	}
+	
+	@keyframes myzoom {
+	0% {
+	background-color: #666;
+	}
+	
+	100% {
+	background-color: #ccc;
+	}
+	}
+	
+	@-webkit-keyframes myzooma {
+	0% {
+	background-color: #666;
+	color: #fff;
+	}
+	
+	11% {
+	background-color: #ccc;
+	color: #fff;
+	}
+	
+	22% {
+	background-color: #666;
+	color: #fff;
+	}
+	
+	33% {
+	transform: scale(1);
+	}
+	
+	44% {
+	transform: scale(1);
+	}
+	
+	55% {
+	transform: scale(1);
+	}
+	
+	66% {
+	transform: scale(1);
+	}
+	
+	100% {
+	transform: scale(1);
+	}
+	}
+	
+	@keyframes myzooma {
+	0% {
+	background-color: #666;
+	color: #fff;
+	}
+	
+	11% {
+	background-color: #ccc;
+	color: #fff;
+	}
+	
+	22% {
+	background-color: #666;
+	color: #fff;
+	}
+	
+	33% {
+	transform: scale(1);
+	}
+	
+	44% {
+	transform: scale(1);
+	}
+	
+	55% {
+	transform: scale(1);
+	}
+	
+	66% {
+	transform: scale(1);
+	}
+	
+	100% {
+	transform: scale(1);
+	}
+	}
+	
+	@-webkit-keyframes myzoomb {
+	0% {
+	transform: scale(1);
+	}
+	
+	11% {
+	background-color: #666;
+	color: #fff;
+	}
+	
+	22% {
+	background-color: #ccc;
+	color: #fff;
+	}
+	
+	33% {
+	background-color: #666;
+	color: #fff;
+	}
+	
+	44% {
+	transform: scale(1);
+	}
+	
+	55% {
+	transform: scale(1);
+	}
+	
+	66% {
+	transform: scale(1);
+	}
+	
+	100% {
+	transform: scale(1);
+	}
+	}
+	
+	@keyframes myzoomb {
+	0% {
+	transform: scale(1);
+	}
+	
+	11% {
+	background-color: #666;
+	color: #fff;
+	}
+	
+	22% {
+	background-color: #ccc;
+	color: #fff;
+	}
+	
+	33% {
+	background-color: #666;
+	color: #fff;
+	}
+	
+	44% {
+	transform: scale(1);
+	}
+	
+	55% {
+	transform: scale(1);
+	}
+	
+	66% {
+	transform: scale(1);
+	}
+	
+	100% {
+	transform: scale(1);
+	}
+	}
+	
+	@-webkit-keyframes myzoomz {
+	0% {
+	transform: scale(1);
+	}
+	
+	11% {
+	transform: scale(1);
+	}
+	
+	22% {
+	transform: scale(1);
+	}
+	
+	33% {
+	background-color: #666;
+	color: #fff;
+	}
+	
+	44% {
+	transform: scale(1);
+	}
+	
+	55% {
+	transform: scale(1);
+	}
+	
+	66% {
+	transform: scale(1);
+	}
+	
+	100% {
+	transform: scale(1);
+	}
+	}
+	
+	@keyframes myzoomz {
+	0% {
+	transform: scale(1);
+	}
+	
+	11% {
+	transform: scale(1);
+	}
+	
+	22% {
+	transform: scale(1);
+	}
+	
+	33% {
+	background-color: #666;
+	color: #fff;
+	}
+	
+	44% {
+	transform: scale(1);
+	}
+	
+	55% {
+	transform: scale(1);
+	}
+	
+	66% {
+	transform: scale(1);
+	}
+	
+	100% {
+	transform: scale(1);
+	}
+	}
+	
+	.tbmatrix {
+	background-color: #fff;
+	}
+	
+	.tbmatrix,
+	.tbmatrix tr,
+	.tbmatrix tr td,
+	.tbmatrix tr th {
+	border: 1px solid #9e9e9e;
+	font-size: 11px;
+	vertical-align: middle;
+	padding: 5px;
+	font-family: 'Lato', Arial, Tahoma, sans-serif !important;
+	}
+	
+	.tbmatrix tr td div.zoom-loop {
+	color: #000 !important;
+	}
+	</style> </div>
+	<div class="col-sm-12 col-lg-8 c-8" style="padding: 0px 7px !important; overflow: auto">
+	<table class="tableku1 table table-bordered no-margin table-hover" id="export" style="margin-top:15px;">
+	<thead>
+	<tr>
+	<th style="width:1px;text-align:center;background-color:#034485;color:#eee;">NO</th>
+	<th style="text-align:center;background-color:#034485;color:#eee;">KODE</th>
+	<th style="text-align:center;background-color:#034485;color:#eee;">UNIT</th>
+	<th style="text-align:center;background-color:#034485;color:#eee;">RISIKO</th>
+	<th style="text-align:center;background-color:#034485;color:#eee;">MITIGASI</th>
+	<th style="width:80px;text-align:center;background-color:#034485;color:#eee;">STATUS MITIGASI</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr class=''><td style='text-align:center' class='risikotop17376' rowspan='1'>1</td><td class='risikotop17376' rowspan='1' style='text-align:center'><a href='javascript:void(0)' onclick='$("#key").val(17376); goSubmit("only_one")'><span class='textmore textmore17376'>PEZZZ0122-011</span></a></td><td class='risikotop17376' rowspan='1' style='text-align:center'>KP-SBY</td><td class='risikotop17376' rowspan='1'><a href='http://localhost/panelbackend/risk_risiko/detail/2736/17376?1685092562' target='_BLANK' data-toggle='tooltip' class='dark-tooltip' title='Informasi & data pendukung'><span class='textmore textmore17376'>Kontribusi APPA belum optimal mendukung bisnis PJB Group</span></a></td><td><span class='textmore textmore17376'>1. Penyusunan Pedoman Capital Recycling – PIC : BOSM</span> <a href="javascript:void(0)" class="btn-show btnshow17376" onclick="$('.risiko17376').show(); $('.btnshow17376').hide(); $('.risikotop17376').attr('rowspan',17); $('.textmore17376 .morehide').show();" style="font-size: 10px;"><i class="material-icons">keyboard_arrow_down</i></a></td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17376 '><td> 2. Penyusunan Pedoman untuk Melakukan Review APPA terhadap Kesesuaiannya dengan FS – PIC: DIVPFO, BOSM</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17376 '><td> 3. Melakukan evaluasi dan kajian optimalisasi atas investasi PJB di AP melalui asset review – PIC : BOSM</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17376 '><td> 4. Menyusun kajian opsi pendanaan lain yang dapat digunakan untuk investasi di PJB Group – PIC : BOSM, DIVPFO</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17376 '><td> 5. Mengarahkan AP untuk dapat menjajaki proyek produk baru sehingga bisa mempercepat perputaran modal – PIC : DIVPFO, DIVBSS (integrasi marketing)</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17376 '><td> 6. Mendorong pemanfaatan idle asset di AP agar dapat dimanfaatkan semaksimal mungkin (pemanfaatan special tools PJBS, pemanfaatan gedung kantor RE) – PIC : DIVPFO</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17376 '><td> 7. Mengawal proses perbaikan proses bisnis dan skema komersial di RE & PLNSC – PIC : DIVPFO</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17376 '><td> 8. Mengawal proses perbaikan proses bisnis administrasi di AP – PIC : DIVPFO</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17376 '><td> 9. Mengawal proses pembentukan lini bisnis baru PLNSC yaitu bisnis forwarding – PIC : DIVPFO</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17376 '><td> 10. Mengawal optimalisasi struktur modal PJBS (Pemanfaatan laba ditahan PJBS) – PIC : DIVPFO</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17376 '><td> 11. Mengawal peningkatan kompetensi PLNSC agar dapat meningkatkan maturity bisnis PLNSC – PIC : DIVPFO</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17376 '><td> 12. Inisiasi pengembangan aplikasi PRIME untuk AP lainnya – PIC : DIVKON, BTIF</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17376 '><td> 13. Meningkatkan kompetensi karyawan APPA PJB – PIC : DIVTLN, PJBAC</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17376 '><td> 14. Implementasi stakeholder management– PIC : BSHM, DIVPFO, AP</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17376 '><td> 15. Mengawal pasca proses M&A di RE (pasca M&A dengan PPN) dan PJBS (pasca transfer bisnis SKP ke PLN Pusdiklat) – PIC : BRKO, DIVPFO</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17376 '><td> 16. Mengarahkan PJBI untuk mendapatkan proyek baru sesuai RUPTL 2021-2030 - PIC : DIVIPP/EBT, DIVPFO</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17376 '><td> 17. Melakukan proses alignment RJPP AP selaras dengan perubahan bisnis baru Jump to New S Curve PJB –PIC : BOSM , PFO<a href="javascript:void(0)" class="btn-hide" style="font-size: 10px;" onclick="$('.risiko17376').hide(); $('.btnshow17376').show(); $('.risikotop17376').attr('rowspan',1); $('.textmore17376 .morehide').hide();"><i class="material-icons">keyboard_arrow_up</i></a></td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr class=''><td style='text-align:center' class='risikotop17345' rowspan='1'>2</td><td class='risikotop17345' rowspan='1' style='text-align:center'><a href='javascript:void(0)' onclick='$("#key").val(17345); goSubmit("only_one")'><span class='textmore textmore17345'>PEZZZ0122-002</span></a></td><td class='risikotop17345' rowspan='1' style='text-align:center'>KP-SBY</td><td class='risikotop17345' rowspan='1'><a href='http://localhost/panelbackend/risk_risiko/detail/2736/17345?1685092562' target='_BLANK' data-toggle='tooltip' class='dark-tooltip' title='Informasi & data pendukung'><span class='textmore textmore17345'>Pengembangan bisnis Beyond Power dan Power Solution tidak efektif</span></a></td><td><span class='textmore textmore17345'>1. Pengembangan dan komersialisasi digitalisasi pembangkit - PIC : STEK, DIVBSS</span> <a href="javascript:void(0)" class="btn-show btnshow17345" onclick="$('.risiko17345').show(); $('.btnshow17345').hide(); $('.risikotop17345').attr('rowspan',18); $('.textmore17345 .morehide').show();" style="font-size: 10px;"><i class="material-icons">keyboard_arrow_down</i></a></td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17345 '><td> 2. Pengembangan bisnis power quality – PIC : DIVBSS ,STEK</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17345 '><td> 3. Pengembangan bisnis manajemen energy melalui kerjasama dengan PT EMI – PIC : DIVBSS</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17345 '><td> 4. Penyusunan kajian Green Energy melalui skema Power Wheeling - PIC : BBTK, DIVEBT, DIVOSK, dan DIVIPP</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17345 '><td> 5. Permohonan penugasan Jasa OM Pembangkit PIC : DIVOSK</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17345 '><td> 6. Mengikuti Tender Jasa OM non PLN Group PIC : DIVBSS</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17345 '><td> 7. Permohonan penugasan Jasa EPC Pembangkit oleh AP PJB (RE) PIC : DIV PFO, RE</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17345 '><td> 8. Mengikuti Tender Jasa EPC non PLN Group oleh AP PJB (RE) PIC : DIV PFO, RE</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17345 '><td> 9. Ekspansi bisnis sparepart ketenagalistrikan oleh AP PJB (PLNSC) PIC : DIV PFO, PLN SC</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17345 '><td> 10. Pengembangan bisnis dengan mengoptimalkan aset PIC : DIVBSS</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17345 '><td> 11. Pengembangan bisnis Jasa Konsultan teknik, enjiniring dan komersialisasi Repair, PIC : DIVBSS</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17345 '><td> 12. Pengembangan bisnis asset management (EAM) PIC : DIVBSS, BBSM</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17345 '><td> 13. Ekspansi pengembangan bisnis MRO – PIC : DIVBSS</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17345 '><td> 14. Monetisasi Intangible Knowledge PJB – PIC : PJB Academy, DIVBSS</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17345 '><td> 15. Integrasi marketing PJB Group dan optimalisasi penggunaan digitalisasi marketing – PIC : DIVBSS, AP</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17345 '><td> 16. Updating strategi dan road map pengembangan bisnis beyond power dengan merujuk hasil evaluasi kondisi eksternal dan internal– PIC : BOSM</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17345 '><td> 17. Menyusun proses bisnis/prosedur/tata Kelola pengembangan bisnis power solution dan beyond power beserta tupoksinya yang sesuai dengan karakterisitik proyek, terutama terkait agility – PIC : DIVBSS, BOSM, BBSM, BADV, BPKO</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17345 '><td> 18. Penyusunan proses bisnis implementasi organisasi matriks dan integrasi resource PJB Group untuk bisnis beyond power – PIC : DIVSHC, DIVBSS, BBSM<a href="javascript:void(0)" class="btn-hide" style="font-size: 10px;" onclick="$('.risiko17345').hide(); $('.btnshow17345').show(); $('.risikotop17345').attr('rowspan',1); $('.textmore17345 .morehide').hide();"><i class="material-icons">keyboard_arrow_up</i></a></td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr class=''><td style='text-align:center' class='risikotop17367' rowspan='1'>3</td><td class='risikotop17367' rowspan='1' style='text-align:center'><a href='javascript:void(0)' onclick='$("#key").val(17367); goSubmit("only_one")'><span class='textmore textmore17367'>PEZZZ0122-003</span></a></td><td class='risikotop17367' rowspan='1' style='text-align:center'>KP-SBY</td><td class='risikotop17367' rowspan='1'><a href='http://localhost/panelbackend/risk_risiko/detail/2736/17367?1685092562' target='_BLANK' data-toggle='tooltip' class='dark-tooltip' title='Informasi & data pendukung'><span class='textmore textmore17367'>Pengembangan bisnis EBT tidak efektif</span></a></td><td><span class='textmore textmore17367'>1. Peningkatan koordinasi dengan stakeholder kunci secara rutin (termasuk pemegang saham dan calon pelanggan) untuk tindak lanjut pengembangan bisnis EBT (Usulan Diraga) PIC : DIVEBT, DIVBSS</span> <a href="javascript:void(0)" class="btn-show btnshow17367" onclick="$('.risiko17367').show(); $('.btnshow17367').hide(); $('.risikotop17367').attr('rowspan',15); $('.textmore17367 .morehide').show();" style="font-size: 10px;"><i class="material-icons">keyboard_arrow_down</i></a></td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17367 '><td> 2. Akselerasi penyiapan proposal pengembangan bisnis EBT (Usulan Diraga) PIC : DIVEBT, DIVBSS</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17367 '><td> 3. Permohonan persetujuan Pembangunan Pembangkit 100% dimiliki PJB (multiyears) PIC : DIVEBT</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17367 '><td> 4. Pembangunan pembangkit dengan skema IPP mayoritas dan minoritas (multiyears) PIC : DIVEBT</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17367 '><td> 5. Melakukan penyusunan model bisnis dalam pengembangan bisnis EBT non pembangkitan (pendanaan, partnership, sinergi AP) - PIC : DIVBSS</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17367 '><td> 6. Menyusun proposal proyek reinvestasi PLTS milik PLN dengan model bisnis yang kompetitif & komprehensif yang kemudian disampaikan kepada Stakeholder untuk mendapatkan Proyek – PIC : DIVEBT</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17367 '><td> 7. Melakukan program Dediselisasi (konversi PLTD ke pembangkit EBT) dan hybrid kepulauan – PIC : DIVEBT</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17367 '><td> 8. Mengembangkan pembangkit EBT skala utilitas (PLTS, PLTB, PLTA/PLTM) – PIC : DIVEBT</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17367 '><td> 9. Melakukan pemasangan PLTS untuk substitusi PS di Unit Eksisting –PIC : DIVEBT, Unit</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17367 '><td> 10. Pengembangan bisnis dan produk rooftop solar PV dengan model bisnis yang kompetitif – PIC : DIVBSS</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17367 '><td> 11. Penyusunan tupoksi terkait pembagian kewenangan untuk pengelolaan EBT pembangkitan dan non pembangkitan – PIC : DIVSHC, DIV EBT, DIV BSS</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17367 '><td> 12. Melakukan pemenuhan resource pelaksana pengembangan EBT – PIC : DIVTLN, DIVSHC, DIVEBT</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17367 '><td> 13. Implementasi stakeholder management kunci terkait peluang bisnis EBT – PIC : BSHM DIVEBT, DIVBSS</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17367 '><td> 14. Integrasi marketing PJB Group dan optimalisasi penggunaan digitalisasi marketing – PIC : DIVBSS</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17367 '><td> 15. Benchmark teknologi baterai ke manufaktur global – PIC : DIVEBT, DIVBSS, BBTK<a href="javascript:void(0)" class="btn-hide" style="font-size: 10px;" onclick="$('.risiko17367').hide(); $('.btnshow17367').show(); $('.risikotop17367').attr('rowspan',1); $('.textmore17367 .morehide').hide();"><i class="material-icons">keyboard_arrow_up</i></a></td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr class=''><td style='text-align:center' class='risikotop17372' rowspan='1'>4</td><td class='risikotop17372' rowspan='1' style='text-align:center'><a href='javascript:void(0)' onclick='$("#key").val(17372); goSubmit("only_one")'><span class='textmore textmore17372'>PEZZZ0122-007</span></a></td><td class='risikotop17372' rowspan='1' style='text-align:center'>KP-SBY</td><td class='risikotop17372' rowspan='1'><a href='http://localhost/panelbackend/risk_risiko/detail/2736/17372?1685092562' target='_BLANK' data-toggle='tooltip' class='dark-tooltip' title='Informasi & data pendukung'><span class='textmore textmore17372'>Eksekusi Tata Kelola Perusahaan terkait Digital Tranformation tidak optimal</span></a></td><td><span class='textmore textmore17372'>1. Menindaklanjuti hasil survey digital mindset – PIC : DIVSHC, BOSM</span> <a href="javascript:void(0)" class="btn-show btnshow17372" onclick="$('.risiko17372').show(); $('.btnshow17372').hide(); $('.risikotop17372').attr('rowspan',12); $('.textmore17372 .morehide').show();" style="font-size: 10px;"><i class="material-icons">keyboard_arrow_down</i></a></td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17372 '><td> 2. Penyusunan dan endorsement roadmap digital transformasi ke Direksi – PIC : KSMAN, BRKO, BTIF</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17372 '><td> 3. Penyusunan & review usulan proses bisnis berbasis digital – PIC : BEKI (pembangkit), BTIF (Non Pembangkit), BBSM</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17372 '><td> 4. Penguatan digital mindset karyawan PJB sesuai roadmap digital transformation – PIC : DIVSHC</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17372 '><td> 5. Pelaksanaan pembelajaran yang berkaitan dengan pengembangan penguatan Bisnis mindset & Digital mindset – PIC : PJBAC</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17372 '><td> 6. Implementasi Digital Equipment Specification – PIC :BEKI</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17372 '><td> 7. Roll-out layanan TI korporat (Lapuskit, iCarla, Navitas, E-Logsheet, PKU, SOKET, i-Diagnostic, iZat, OMAMO) pada 7 PLTU (Kaltim Teluk, Amurang, Pulang Pisau, Bolok, Bangka, Kendari, Belitung) – PIC : BTIF</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17372 '><td> 8. Peremajaan Core Switch DC PT PJB – PIC : BTIF</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17372 '><td> 9. Pengadaan Network Access Control (NAC) mendukung Zero Trust Architecture – PIC : BTIF</td><td style='text-align:center'><span class='badge label-success'>Complete</span></td></tr><tr style='display:none' class='risiko17372 '><td> 10. Prioritisasi program digital transformasi 2022 sesuai ketersediaan anggaran – PIC : KSMAN, KSKOR</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17372 '><td> 11. Pendampingan ke unit teknis pengisian dan optimasi/perubahan teknis di modul CMMS – PIC : BEKI</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17372 '><td> 12. Pembentukan PIC khusus masing-masing unit di pihak Vendor dan pendamping dari iCORE – PIC : BEKI<a href="javascript:void(0)" class="btn-hide" style="font-size: 10px;" onclick="$('.risiko17372').hide(); $('.btnshow17372').show(); $('.risikotop17372').attr('rowspan',1); $('.textmore17372 .morehide').hide();"><i class="material-icons">keyboard_arrow_up</i></a></td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr class=''><td style='text-align:center' class='risikotop17371' rowspan='1'>5</td><td class='risikotop17371' rowspan='1' style='text-align:center'><a href='javascript:void(0)' onclick='$("#key").val(17371); goSubmit("only_one")'><span class='textmore textmore17371'>PEZZZ0122-006</span></a></td><td class='risikotop17371' rowspan='1' style='text-align:center'>KP-SBY</td><td class='risikotop17371' rowspan='1'><a href='http://localhost/panelbackend/risk_risiko/detail/2736/17371?1685092562' target='_BLANK' data-toggle='tooltip' class='dark-tooltip' title='Informasi & data pendukung'><span class='textmore textmore17371'>Ketidaksiapan pembangkit yang dikelola PJB</span></a></td><td><span class='textmore textmore17371'>1. Meningkatkan efisiensi pembangkit melalui combustion tuning & Boiler Optimization – PIC: BBTK, BEKI</span> <a href="javascript:void(0)" class="btn-show btnshow17371" onclick="$('.risiko17371').show(); $('.btnshow17371').hide(); $('.risikotop17371').attr('rowspan',28); $('.textmore17371 .morehide').show();" style="font-size: 10px;"><i class="material-icons">keyboard_arrow_down</i></a></td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17371 '><td> 2. Penyusunan Sistem Forensic Engineering – Equipment & Machinery Breakdown untuk unit pembangkit jasa O&M Jawa – PIC : BEKI</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17371 '><td> 3. Penyusunan tata kelola bisnis jasa O&M – PIC : DIVOSK 1&2, DIVIPP, BOSM</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17371 '><td> 4. Implementasi digitalisasi pembangkit – PIC : BEKI</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17371 '><td> 5. Penguatan kompetensi SDM antara lain :
+	a. (K) Terkait OME (PGD, Sertifikasi, Parenting & Sistering) dan penguatan Bidang Technical Support (BTST) – PIC : BTST, PJB Academy
+	b. (K) Pemberdayaan Expertise untuk operational Excellence – PIC : BTST
+	c, (K,D) Optimalisasi Integrasi Resources PJB Group untuk meningkatkan competitiveness dan kompetensi SDM PJB Group – PIC : DIVPFO, DIVTLN, PJBS
+	d. (K) Mengadakan pee group discussion terkait permasalahan yang besar dan berdampak pada kinerja Unit untuk sebagai leasson learned agar tidak terjadi permalasahan yang sama di Unit lain – PIC : BTST</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17371 '><td> 6. Mengamankan pasokan batubara dengan :
+	a. (K) Menambah pengadaan batubara multi source untuk unit pembangkit jasa O&M Jawa – PIC : DIVEPI 1, DIVSCM, DIVANG (pengusul DIVEPI-1) usul EPI 1 dihapus
+	b. (K) Mengusulkan ke PT PLN (Persero) untuk melakukan tambahan pasokan batubara baik melalui kontrak spot maupun penambahan volume nominasi pada pemasok yang masih mampu untuk unit pembangkit jasa O&M Jawa – PIC : DIVEPI 1&2</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17371 '><td> 7. Memastikan ketersediaan anggaran untuk :
+	a. (K,D) pelaksanaan pemeliharaan mesin yang telah mencapai EOH-nya untuk unit pembangkit jasa O&M Jawa – PIC : DIVOSK1 & DIVROP1
+	b. (K,D) pelaksanaan OH dan program investasi pendukung keandalan pembangkit –PIC : DIVOSK1, DIVOSK2, DIVROP1, DIVROP2, DIVANG, DIVBHP</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17371 '><td> 8. Pemenuhan material cadang (Strategic Parts) dan optimalisasi penggunaan material persediaan – PIC : DIVROP1&2 dan DIVSCM</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17371 '><td> 9. Menyusun level kompetensi asset management – PIC : PJBAC, BBSM</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17371 '><td> 10. Melakukan Review Implementasi Asset Management – PIC : BKKO, DIVROP, BEKI, DIVSCM</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17371 '><td> 11. Menjalin komunikasi dan stakeholder management yang lebih baik dengan Asset Owner (PLN Sektor/Wilayah) dan PLN Regional KantorPusat khususnya terkait AI untuk unit pembangkit jasa O&M Luar Jawa– PIC : DIVOSK1-2 & BSHM</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17371 '><td> 12. Penguatan implementasi tata Kelola pembangkit model 2 dan 3 yang memenuhi maturitas level yang diperlukan utuk mencapai OM ekselen – PIC : PJBS, DIVROP 1&2, BEKI, BTST, BBSM, BKKO
+	- Penyesuaian pedoman maturity level Tata Kelola Pembangkitan model 3, terutama dalam maturitas system pendukung pembagian peran unit dan KP – PIC : BKKO, BBSM, PJBS
+	- Penguatan fungsi COMANDO sebagai tool predictive analysis berdasar data real time pembangkit (PIC: Satuan Enjiniring PJBS. Div TI PJBS)
+	- Penguatan kompetensi OM local resource melalui Paspor OM dan penguatan kompetensi local expert dan KP melalui Paspor Expert (PIC: Div Pengembangan HC PJBS) (pengusul PJBS)</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17371 '><td> 13. Perluasan scope RLA boiler, turbin, coal handling facility untuk unit pembangkit jasa O&M Luar Jawa – PIC : BTST, PJBS</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17371 '><td> 14. Mengelola rekomendasi hasil assessment kondisi peralatan pembangkit untuk unit pembangkit jasa O&M Luar Jawa – PIC : UJLJ 2</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17371 '><td> 15. Mengoptimalkan fasilitias Virtual Assistant untuk membantu menyelesaikan permasalahaan saat pelaksanaan Overhaul untuk unit pembangkit jasa O&M Luar Jawa – PIC : UPHAR, BTST</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17371 '><td> 16. Merubah skema menjadi kontrak AMC untuk unit pembangkit jasa O&M Luar Jawa – PIC : DIVOSK 1&2</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17371 '><td> 17. Penyusunan program Manajemen Perubahan dalam rangka likuidasi UJLJ 2:– PIC : DIVSHC, UJLJ 2
+	a. Penyesuaian proses bisnis termasuk Sosialisasi dan internalisasi serta evaluasi proses bisnis yang baru - PIC : DIVSHC, UJLJ 2, BBSM
+	b. Penyesuaian anggaran UJLJ 2 – PIC : DIVANG
+	c. Penyesuaian pembebanan biaya – PIC : DIVTAN
+	d. Penyesuaian kontrak – SPH, BPKO
+	e. Penyesuaian aplikasi IT – BTIF
+	f. Mutasi karyawan – PIC : DIVTLN
+	g. Penyesuaian kontrak kinerja – PIC : BKKO</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17371 '><td> 18. Melakukan penajaman terhadap BMS terutama terkait management resources untuk mempercepat eksekusi MRO unit – PIC : PJBS, UJLJ 2, STEK, Unit MRO, BBSM</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17371 '><td> 19. Penguatan keandalan coal handling facility untuk unit pembangkit jasa O&M Jawa – PIC : DIVEPI 1&2</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17371 '><td> 20. Identifikasi peralatan HILP (high impact low probability) untuk unit pembangkit jasa O&M Jawa – PIC : BEKI</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17371 '><td> 21. Optimalisasi biaya dengan melakukan repair peralatan pembangkit di UBJOM secara swakelola di Workshop MRO – PIC: BTST</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17371 '><td> 22. Penyesuaian siklus dan improvement eksekusi OH untuk unit pembangkit jasa O&M Jawa – PIC : BTST</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17371 '><td> 23. Permohonan persetujuan Alih Aset Pembangkit FTP-1 dan PLTGU AMC – PIC : BRKO, DIVIPP</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17371 '><td> 24. Pengujian bersama P2B pasca penyesuaian logic dan penormalan line komunikasi antara unit dengan P2B oleh Tim Icon+ - PIC : BTST</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17371 '><td> 25. Pengadaan Fasilitas Blackstart (EDG/Emergency Diesel Generator) di MTW & CRT untuk mendukung 6 lines of defense system Jamali – PIC : DIVROP 1, BEKI, Unit</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17371 '><td> 26. Pelaksanaan resetting UFR-OFR sesuai standard grid code menyesuaikan jadwal OH pembangkit - PIC : DIVROP 2</td><td style='text-align:center'><span class='badge label-success'>Complete</span></td></tr><tr style='display:none' class='risiko17371 '><td> 27. Perencanaan dan penyiapan fasilitas AGC/LFC pembangkit – PIC : DIVROP-2</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17371 '><td> 28. Penguatan Keandalan Coal Handling Facility - PIC: EPI 1 dan 2, Unit PLTU BB<a href="javascript:void(0)" class="btn-hide" style="font-size: 10px;" onclick="$('.risiko17371').hide(); $('.btnshow17371').show(); $('.risikotop17371').attr('rowspan',1); $('.textmore17371 .morehide').hide();"><i class="material-icons">keyboard_arrow_up</i></a></td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr class=''><td style='text-align:center' class='risikotop17337' rowspan='1'>6</td><td class='risikotop17337' rowspan='1' style='text-align:center'><a href='javascript:void(0)' onclick='$("#key").val(17337); goSubmit("only_one")'><span class='textmore textmore17337'>PEZZZ0122-001</span></a></td><td class='risikotop17337' rowspan='1' style='text-align:center'>KP-SBY</td><td class='risikotop17337' rowspan='1'><a href='http://localhost/panelbackend/risk_risiko/detail/2736/17337?1685092562' target='_BLANK' data-toggle='tooltip' class='dark-tooltip' title='Informasi & data pendukung'><span class='textmore textmore17337'>Terjadinya kecelakaan kerja dan darurat Kesehatan</span></a></td><td><span class='textmore textmore17337'>1. Penyusunan dokumen PIP dan pelaksanaan simulasi aktual (drill) sesuai dengan dokumen PIP yang tersusun – PIC: BEKI, DIVLK3 1&2, Unit</span> <a href="javascript:void(0)" class="btn-show btnshow17337" onclick="$('.risiko17337').show(); $('.btnshow17337').hide(); $('.risikotop17337').attr('rowspan',13); $('.textmore17337 .morehide').show();" style="font-size: 10px;"><i class="material-icons">keyboard_arrow_down</i></a></td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17337 '><td> 2. Inisiasi Program Stop Work Authority (SWA) – PIC : DIVLK3 1 -2</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17337 '><td> 3. Melaksanakan vaksinasi untuk workforce yang belum divaksin dan vaksinasi ke 3 diprioritaskan untuk operator dan pemeiharaan – PIC : DIVPMC</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17337 '><td> 4. Penguatan monitoring pelaksanaan program pencegahan covid 19 – PIC : DIVLK3 1&2, DIVPMC</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17337 '><td> 5. Membuat kurikulum dan memberikan knowledge sharing kepada mitra kerja / kontraktor (freelance MKP) terkait dasar-dasar keselamatan kerja/basic K3 untuk MKP – PIC : DIVLK3 1&2, PJB Academy</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17337 '><td> 6. Implementasi CSMS secara full cycle – PIC : DIVLK3 1&2, DIVSCM</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17337 '><td> 7. Pengembangan i-diagnostic – PIC : DIVLK3 1 -2, BTIF</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17337 '><td> 8. Optimalisasi penggunaan aplikasi IZAT 2.0 terkait fitur baru dan konsistensi penggunaannya– PIC : DIVLK3 1 -2</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17337 '><td> 9. Evaluasi dan Penguatan implementasi Crisis Response Korporat – PIC : DIV LK3-1&2, BRIS, BSHM</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17337 '><td> 10. Program SMK3 Tahap III PLTU Tembilahan – PIC : UJLJ 2, PJBS</td><td style='text-align:center'><span class='badge label-success'>Complete</span></td></tr><tr style='display:none' class='risiko17337 '><td> 11. Program SMK3 tahap III PLTU Air Anyir – PIC : UJLJ 2, PJBS</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17337 '><td> 12. Melakukan sertifikasi system fire alarm di Kantor Pusat – PIC : BMUM</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17337 '><td> 13. Penguatan budaya K3 dan Infrastruktur K3 di UBJOM Luar Jawa – PIC : UJLJ 2, PJBS<a href="javascript:void(0)" class="btn-hide" style="font-size: 10px;" onclick="$('.risiko17337').hide(); $('.btnshow17337').show(); $('.risikotop17337').attr('rowspan',1); $('.textmore17337 .morehide').hide();"><i class="material-icons">keyboard_arrow_up</i></a></td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr class=''><td style='text-align:center' class='risikotop17373' rowspan='1'>7</td><td class='risikotop17373' rowspan='1' style='text-align:center'><a href='javascript:void(0)' onclick='$("#key").val(17373); goSubmit("only_one")'><span class='textmore textmore17373'>PEZZZ0122-008</span></a></td><td class='risikotop17373' rowspan='1' style='text-align:center'>KP-SBY</td><td class='risikotop17373' rowspan='1'><a href='http://localhost/panelbackend/risk_risiko/detail/2736/17373?1685092562' target='_BLANK' data-toggle='tooltip' class='dark-tooltip' title='Informasi & data pendukung'><span class='textmore textmore17373'>Ketidaksiapan dan perubahan kondisional proyek ketenagalistrikan berdampak pada ketidakmampuan dalam pembayaran kewajiban perusahaan</span></a></td><td><span class='textmore textmore17373'>1. Penyelesaian COD MTW Add On Blok 2,3,4 – PIC : DIVKON, UBANG</span> <a href="javascript:void(0)" class="btn-show btnshow17373" onclick="$('.risiko17373').show(); $('.btnshow17373').hide(); $('.risikotop17373').attr('rowspan',11); $('.textmore17373 .morehide').show();" style="font-size: 10px;"><i class="material-icons">keyboard_arrow_down</i></a></td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17373 '><td> 2. Penguatan kompetensi SDM berkaitan dengan Pengembangan Bisnis, EPC, dan EBT - PIC : PJB Academy</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17373 '><td> 3. Melakukan stakeholder management untuk koordinasi dan update informasi terkait penugasan proyek, kejelasan status proyek dan optimasi terkait anggaran yang dikembangkan PT PJB – PIC: DIVIPP, DIVEBT</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17373 '><td> 4. Melakukan koordinasi dengan PLN terkait kondisi PJB dan opsi skema terbaik untuk menurunkan potensi dikenakan denda keterlambatan pembayaran - PIC : DIVBHP,DIVANG,DIVKON, DIVOSK 1</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17373 '><td> 5. Mereview PJBTL PJB PLN atas pencairan pembayaran SHL dan bunga sudah termasuk kedalam pasal pembayaran komponen A untuk proyek non IPP dan pengembalian investasi untuk switchyard melalui komponen E - PIC : DIVOSK 1, DIVBHP</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17373 '><td> 6. Mengembangkan/mengupdate strategi program proyek dengan merujuk pada hasil evaluasi dan monitoring rutin, dinamika kondisi eksternal dan internal serta menganalisa dampaknya bagi Perusahaan – PIC : BOSM</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17373 '><td> 7. Penyiapan proses bisnis akselerasi proyek untuk mengantisipasi perubahan jadwal proyek dan peluang bisnis yang membutuhkan respon cepat dengan tetap mengacu pada kebijakan yang berlaku termasuk serah terima proyek : PIC : BOSM, DIVKON, UBANG, BBSM
+	- Pembuatan dashboard monitoring pembiyaan untuk memberikan early warning terhadap kecukupan biaya proyek (UBANG)</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17373 '><td> 8. Melakukan pemilihan kontraktor supervise konstruksi yang handal dan bereputasi internasional – PIC : PJBI (Proyek IPP, berlanjut ke tahun berikutnya), DIVKON, DIVSCM (Proyek non ipp)</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17373 '><td> 9. Inisiasi Pengembangan aplikasi PRIME untuk diintegrasikan dengan aplikasi i-care – PIC : DIVKON, UBANG, BTIF, BRIS</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17373 '><td> 10. Merencanakan kebutuhan TKA dan berkoordinasi dalam menyusun permohonan exception Travel banned bagi TKA untuk kebutuhan commissioning kepada instansi terkait. (Penyelesaian COD MTW Add On Blok 2,3,4) – PIC: UBANG</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17373 '><td> 11. Melakukan inisiasi/mengusulkan proyek baru di dalam shortlist proyek apabila terdapat proyek yang mengalami penundaan jadwal COD – PIC : DIVIPP, DIVEBT<a href="javascript:void(0)" class="btn-hide" style="font-size: 10px;" onclick="$('.risiko17373').hide(); $('.btnshow17373').show(); $('.risikotop17373').attr('rowspan',1); $('.textmore17373 .morehide').hide();"><i class="material-icons">keyboard_arrow_up</i></a></td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr class=''><td style='text-align:center' class='risikotop17377' rowspan='1'>8</td><td class='risikotop17377' rowspan='1' style='text-align:center'><a href='javascript:void(0)' onclick='$("#key").val(17377); goSubmit("only_one")'><span class='textmore textmore17377'>PEZZZ0122-012</span></a></td><td class='risikotop17377' rowspan='1' style='text-align:center'>KP-SBY</td><td class='risikotop17377' rowspan='1'><a href='http://localhost/panelbackend/risk_risiko/detail/2736/17377?1685092562' target='_BLANK' data-toggle='tooltip' class='dark-tooltip' title='Informasi & data pendukung'><span class='textmore textmore17377'>Organisasi dan human capital kurang mendukung dalam eksekusi program strategis korporat</span></a></td><td><span class='textmore textmore17377'>1. Penyusunan kajian Organisasi pengelola integrated marketing dan sales – PIC : DIVSHC</span> <a href="javascript:void(0)" class="btn-show btnshow17377" onclick="$('.risiko17377').show(); $('.btnshow17377').hide(); $('.risikotop17377').attr('rowspan',12); $('.textmore17377 .morehide').show();" style="font-size: 10px;"><i class="material-icons">keyboard_arrow_down</i></a></td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17377 '><td> 2. Optimasi Organisasi pada Unit yang mengalami penurunan CF – PIC : DIVSHC</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17377 '><td> 3. Penguatan kompetensi SDM untuk mendukung pengembangan bisnis Beyond kWh serta penguatan Bisnis mindset & Digital mindset (fokus pada kompetensi OME, EBT dan Aset Management pada Eksisting dan New Business, Ecosystem analysis, Business think, Manajemen Inovasi, Legal Business, RiskCulture, Manajemen Investasi an Soft skill untuk menghadapi revolusi industri 4.0 (social leadership, emphaty leadership, building creativity and innovation,embracing change, growth mindset, Big data / data mining, Data science/ data analysis (marketing intelligence), Machine learning )– PIC : PJBAC, DIVSHC, BOSM ¿ HCR
+	a. Penyiapan metode buy and borrow untuk luar PLN Group
+	b. Pendampingan konsultan marketing/ bisnis ¿ HCR
+	c. Penguatan kompetensi SDM untuk mendukung pengembangan bisnis Beyond kWh - PIC : PJBAC -> HCR</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17377 '><td> 4. Optimalisasi Integrasi Resources PJB Group untuk meningkatkan competitiveness dan kompetensi SDM PJB Group ¿ HCR
+	- Menyusun dan Implementasi prosedur Integrasi Resources PJB Group, PIC : SKOR, DIV SHC, DIV TLN, DIVBSS, DIVPFO
+	- Meningkatkan kompetensi karyawan dengan penugaskaryaan karyawan ke PLN Group dan APPA PJB – PIC : DIVTLN
+	- Penguatan personil di UPHT atau UPHB melalui penambahan karyawan dari unit RSH atau karyawan PJB yang memiliki pengalaman di APPA, untuk mendukung pengembangan UPHAR dalam bisnis kedepan sebagai penyedia jasa diluar bisnis pembangkitan – PIC : DIVTLN (pengusul DIVTLN)
+	- Penempatan personil dalam proyek PT PJB baik melalui skema Tugas Karya, Penugasan Khusus atau tim – PIC : DIV TLN</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17377 '><td> 5. Penyesuaian organisasi dengan strategi korporat termasuk organisasi pengelola integrated marketing dan sales dan product owner untuk lini bisnis baru– PIC : DIVSHC
+	termasuk Penyiapan proses bisnis dan organisasi (RASCI) untuk eksekusi bisnis beyond power</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17377 '><td> 6. Optimasi organisasi dan human capital pada unit yang mengalami penurunan CF – PIC : DIVSHC ¿ OCR Alignment</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17377 '><td> 7. Melakukan evaluasi organisasi matriks – PIC : DIVSHC -> OCR Alignment</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17377 '><td> 8. Mengcascade program strategis perusahaan ke individu (to do list) – PIC : DIVPMC -> OCR Alignment</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17377 '><td> 9. Melakukan penempatan dan pengembangan karyawan berdasarkan soft competency yang dimiliki karyawan (enterpreuner untuk pengembangan usaha, professional untuk pengelolaan pembangkit) – PIC : PJB Academy, DIVTLN -> HCR</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17377 '><td> 10. Peningkatan sarana dan prasarana pendukung pembelajaran – PIC : PJBAC -> HCR</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17377 '><td> 11. Koordinasi dengan vendor sertifikasi untuk dapat menggunakan sistem road show ke Unit - PIC : PJBAC -> HCR</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17377 '><td> 12. Workshop pengelolaan KLRA PIC : PJBAC -> OCR Teamwork<a href="javascript:void(0)" class="btn-hide" style="font-size: 10px;" onclick="$('.risiko17377').hide(); $('.btnshow17377').show(); $('.risikotop17377').attr('rowspan',1); $('.textmore17377 .morehide').hide();"><i class="material-icons">keyboard_arrow_up</i></a></td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr class=''><td style='text-align:center' class='risikotop17375' rowspan='1'>9</td><td class='risikotop17375' rowspan='1' style='text-align:center'><a href='javascript:void(0)' onclick='$("#key").val(17375); goSubmit("only_one")'><span class='textmore textmore17375'>PEZZZ0122-010</span></a></td><td class='risikotop17375' rowspan='1' style='text-align:center'>KP-SBY</td><td class='risikotop17375' rowspan='1'><a href='http://localhost/panelbackend/risk_risiko/detail/2736/17375?1685092562' target='_BLANK' data-toggle='tooltip' class='dark-tooltip' title='Informasi & data pendukung'><span class='textmore textmore17375'>Ketidakpatuhan terhadap regulasi lingkungan yang semakin ketat</span></a></td><td><span class='textmore textmore17375'>1. Perencanaan pembangunan landfill dan pengurusan izin penimbunan untuk UBJOM Luar Jawa - PIC : DIVLK3 1&2</span> <a href="javascript:void(0)" class="btn-show btnshow17375" onclick="$('.risiko17375').show(); $('.btnshow17375').hide(); $('.risikotop17375').attr('rowspan',9); $('.textmore17375 .morehide').show();" style="font-size: 10px;"><i class="material-icons">keyboard_arrow_down</i></a></td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17375 '><td> 2. Revitalisasi WWTP dan STP – PIC: BEKI, DIVLK3 1 & 2</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17375 '><td> 3. Pemenuhan regulasi lingkungan – PIC: DIVLK3 1 & 2</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17375 '><td> 4. Pemasangan CEMs merkuri dan Co2 secara online sesuai dengan peraturan perundangan yang berlaku – PIC: DIVLK3 1 & 2, BEKI, DIVROP 1 & 2, DIVSCM</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17375 '><td> 5. Perencanaan dan Pengadaan batubara low sulphur untuk PLTU Batubara – PIC: DIVEPI 1 & 2, DIVSCM</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17375 '><td> 6. Perencanaan alternatif peemanfaatan FABA untuk PLTU batubara secara internal maupun eksternal – PIC: DIVLK3 1 & 2</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17375 '><td> 7. Mendukung pelaksanaan cofiring dengan memastikan bahwa kegiatan tersebut tercantum di dalam dokumen lingkungan – PIC: DIVLK3 1 & 2</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17375 '><td> 8. Penyusunan BMS untuk mekanisme berbasis pasar (cap and trade, karbon offsetting) dan pajak karbon – PIC : DIVTAN, DIVBHP, DIVOSK 1 & 2, BOSM, DIVROP 1 & 2, DIVEPI 1&2, DIVANG, DIVLK3 1 & 2</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17375 '><td> 9. Penguatan kompetensi SDM berkaitan dengan pengelolaan lingkungan – PIC : PJBAC<a href="javascript:void(0)" class="btn-hide" style="font-size: 10px;" onclick="$('.risiko17375').hide(); $('.btnshow17375').show(); $('.risikotop17375').attr('rowspan',1); $('.textmore17375 .morehide').hide();"><i class="material-icons">keyboard_arrow_up</i></a></td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr class=''><td style='text-align:center' class='risikotop17374' rowspan='1'>10</td><td class='risikotop17374' rowspan='1' style='text-align:center'><a href='javascript:void(0)' onclick='$("#key").val(17374); goSubmit("only_one")'><span class='textmore textmore17374'>PEZZZ0122-009</span></a></td><td class='risikotop17374' rowspan='1' style='text-align:center'>KP-SBY</td><td class='risikotop17374' rowspan='1'><a href='http://localhost/panelbackend/risk_risiko/detail/2736/17374?1685092562' target='_BLANK' data-toggle='tooltip' class='dark-tooltip' title='Informasi & data pendukung'><span class='textmore textmore17374'>Terhambatnya kontinuitas implementasi co firing</span></a></td><td><span class='textmore textmore17374'>1. Melakukan kontrak jangka panjang terkait pengadaan biomasa - PIC: DIVEP 1&2</span> <a href="javascript:void(0)" class="btn-show btnshow17374" onclick="$('.risiko17374').show(); $('.btnshow17374').hide(); $('.risikotop17374').attr('rowspan',7); $('.textmore17374 .morehide').show();" style="font-size: 10px;"><i class="material-icons">keyboard_arrow_down</i></a></td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17374 '><td> 2. Pembuatan temporary shelter untuk mendukung implementasi co-firing di paiton 1 dan 2 – PIC : Unit, DIVROP 1</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17374 '><td> 3. Melakukan uji durability untuk mengetahui dampak cofiring — PIC : BBTK</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17374 '><td> 4. Penyusunan dan review usulan proses bisnis terkait co firing - PIC : BBTK, BBSM</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17374 '><td> 5. Penguatan organisasi pengelola biomassa— PIC: DIVSHC, DIVROP 1&2, DIVEPI 1&2</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17374 '><td> 6. Penyiapan Pendanaan untuk memenuhi target co-firing 30%-100% menuju 2025 PIC: DIV ANG, DIV RKO, BBTK</td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr><tr style='display:none' class='risiko17374 '><td> 7. Ekspansi implementasi Co Firing PIC : BBTK<a href="javascript:void(0)" class="btn-hide" style="font-size: 10px;" onclick="$('.risiko17374').hide(); $('.btnshow17374').show(); $('.risikotop17374').attr('rowspan',1); $('.textmore17374 .morehide').hide();"><i class="material-icons">keyboard_arrow_up</i></a></td><td style='text-align:center'><span class='badge label-warning'>On Progress</span></td></tr> </tbody>
+	</table>
+	<!-- <div class="table-responsive">
+	</div> -->
+	</div>
+	</div>
+	<!-- <div class="row"> -->
+	<!-- <div class="col-lg-12"> -->
+	<!-- </div> -->
+	<!-- </div> -->
+	<script type="text/javascript">
+	function mtsize(x) {
+	console.log($(".widthmtrix").width());
+	$("#divmatrix").css("zoom", $(".widthmtrix").width() / 500);
+	}
+	$(function() {
+	mtsize(true);
+	$('.textmore').each(function() {
+	var textmore = $(this).html();
+	var loop = textmore.split(" ");
+	var str1 = '';
+	var str2 = '';
+	for (var i = 0; i < loop.length; i++) {
+	if (i <= 4)
+	str1 += loop[i] + ' ';
+	else
+	str2 += loop[i] + ' ';
+	}
+	
+	$(this).html(str1 + '<span class="morehide" style="display:none">' + str2 + '</span>');
+	});
+	})
+	</script>
+	
+	<style>
+	#container {
+	width: 100%;
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
+	}
+	
+	.h4,
+	.h5,
+	.h6,
+	h4,
+	h5,
+	h6,
+	hr {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	}
+	
+	.tableku1 thead {
+	page-break-before: always;
+	}
+	
+	.css_only_one td {
+	font-weight: bold !important;
+	}
+	
+	.tableku1 {
+	margin-top: 10px;
+	width: 100%;
+	}
+	
+	.tableku1 td {
+	padding: 10px 5px !important;
+	vertical-align: top;
+	font-size: 12px !important;
+	}
+	
+	.tableku1 thead th {
+	padding: 10px 5px !important;
+	text-align: center;
+	}
+	
+	.tableku1 th {
+	padding: 0px 3px !important;
+	text-align: center;
+	font-size: 12px !important;
+	}
+	
+	.btn-show {
+	float: right;
+	height: 0px;
+	margin-top: -1px;
+	}
+	
+	.btn-hide {
+	float: right;
+	height: 15px;
+	}
+	</style> </div>
+	</div>
+	</div>
+	</div>
+	
+	<!-- <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+	<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+	<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script> -->
+	<script src="http://localhost/assets/js/core.js"></script>
+	<script src="http://localhost/assets/js/charts.js"></script>
+	<script src="http://localhost/assets/js/animated.js"></script>
+	<script type="text/javascript">
+	am4core.ready(function() {
+	
+	// Themes begin
+	am4core.useTheme(am4themes_animated);
+	// Themes end
+	
+	// Create chart instance
+	var chart = am4core.create("donut_chart1", am4charts.PieChart3D);
+	
+	// Add and configure Series
+	var pieSeries = chart.series.push(new am4charts.PieSeries3D());
+	pieSeries.dataFields.value = "jumlah";
+	pieSeries.dataFields.category = "tingkat";
+	
+	// Let's cut a hole in our Pie chart the size of 30% the radius
+	// chart.innerRadius = am4core.percent(30);
+	
+	// Put a thick white border around each Slice
+	// pieSeries.slices.template.stroke = am4core.color("#fff");
+	// pieSeries.slices.template.strokeWidth = 2;
+	// pieSeries.slices.template.strokeOpacity = 1;
+	pieSeries.slices.template
+	// change the cursor on hover to make it apparent the object can be interacted with
+	.cursorOverStyle = [{
+	"property": "cursor",
+	"value": "pointer"
+	}];
+	
+	pieSeries.alignLabels = false;
+	// pieSeries.labels.template.bent = true;
+	// pieSeries.labels.template.radius = 3;
+	pieSeries.labels.template.padding(0, 0, 0, 0);
+	pieSeries.labels.template.fill = am4core.color("#ffffff");
+	
+	pieSeries.ticks.template.disabled = true;
+	
+	//color
+	pieSeries.slices.template.propertyFields.fill = "color";
+	
+	// Create a base filter effect (as if it's not there) for the hover to return to
+	var shadow = pieSeries.slices.template.filters.push(new am4core.DropShadowFilter);
+	shadow.opacity = 0;
+	
+	// Create hover state
+	var hoverState = pieSeries.slices.template.states.getKey("hover"); // normally we have to create the hover state, in this case it already exists
+	
+	// Slightly shift the shadow and make it more prominent on hover
+	var hoverShadow = hoverState.filters.push(new am4core.DropShadowFilter);
+	hoverShadow.opacity = 0.7;
+	hoverShadow.blur = 5;
+	
+	// Add a legend
+	// chart.legend = new am4charts.Legend();
+	
+	chart.data = [
+	{
+	tingkat: "Ekstrem",
+	jumlah: 1,
+	color: am4core.color("#F14236")
+	},
+	{
+	tingkat: "Sangat Tinggi",
+	jumlah: 16,
+	color: am4core.color("#FF7F25")
+	},
+	{
+	tingkat: "Tinggi",
+	jumlah: 1,
+	color: am4core.color("#ffe94d")
+	},
+	];
+	
+	
+	
+	// Themes begin
+	am4core.useTheme(am4themes_animated);
+	// Themes end
+	
+	// Create chart instance
+	var chart = am4core.create("donut_chart2", am4charts.PieChart3D);
+	
+	// Add and configure Series
+	var pieSeries = chart.series.push(new am4charts.PieSeries3D());
+	pieSeries.dataFields.value = "jumlah";
+	pieSeries.dataFields.category = "tingkat";
+	
+	// Let's cut a hole in our Pie chart the size of 30% the radius
+	// chart.innerRadius = am4core.percent(30);
+	
+	// Put a thick white border around each Slice
+	// pieSeries.slices.template.stroke = am4core.color("#fff");
+	// pieSeries.slices.template.strokeWidth = 2;
+	// pieSeries.slices.template.strokeOpacity = 1;
+	pieSeries.slices.template
+	// change the cursor on hover to make it apparent the object can be interacted with
+	.cursorOverStyle = [{
+	"property": "cursor",
+	"value": "pointer"
+	}];
+	
+	pieSeries.alignLabels = false;
+	// pieSeries.labels.template.bent = true;
+	// pieSeries.labels.template.radius = 3;
+	pieSeries.labels.template.padding(0, 0, 0, 0);
+	pieSeries.labels.template.fill = am4core.color("#ffffff");
+	
+	pieSeries.ticks.template.disabled = true;
+	
+	//color
+	pieSeries.slices.template.propertyFields.fill = "color";
+	
+	// Create a base filter effect (as if it's not there) for the hover to return to
+	var shadow = pieSeries.slices.template.filters.push(new am4core.DropShadowFilter);
+	shadow.opacity = 0;
+	
+	// Create hover state
+	var hoverState = pieSeries.slices.template.states.getKey("hover"); // normally we have to create the hover state, in this case it already exists
+	
+	// Slightly shift the shadow and make it more prominent on hover
+	var hoverShadow = hoverState.filters.push(new am4core.DropShadowFilter);
+	hoverShadow.opacity = 0.7;
+	hoverShadow.blur = 5;
+	
+	// Add a legend
+	// chart.legend = new am4charts.Legend();
+	
+	chart.data = [
+	{
+	tingkat: "Sangat Tinggi",
+	jumlah: 6,
+	color: am4core.color("#FF7F25")
+	},
+	{
+	tingkat: "Tinggi",
+	jumlah: 11,
+	color: am4core.color("#ffe94d")
+	},
+	{
+	tingkat: "Moderat",
+	jumlah: 1,
+	color: am4core.color("#2196f3")
+	},
+	];
+	
+	
+	// Themes begin
+	am4core.useTheme(am4themes_animated);
+	// Themes end
+	
+	// Create chart instance
+	var chart = am4core.create("donut_chart3", am4charts.PieChart3D);
+	
+	// Add and configure Series
+	var pieSeries = chart.series.push(new am4charts.PieSeries3D());
+	pieSeries.dataFields.value = "jumlah";
+	pieSeries.dataFields.category = "tingkat";
+	
+	// Let's cut a hole in our Pie chart the size of 30% the radius
+	// chart.innerRadius = am4core.percent(30);
+	
+	// Put a thick white border around each Slice
+	// pieSeries.slices.template.stroke = am4core.color("#fff");
+	// pieSeries.slices.template.strokeWidth = 2;
+	// pieSeries.slices.template.strokeOpacity = 1;
+	pieSeries.slices.template
+	// change the cursor on hover to make it apparent the object can be interacted with
+	.cursorOverStyle = [{
+	"property": "cursor",
+	"value": "pointer"
+	}];
+	
+	pieSeries.alignLabels = false;
+	// pieSeries.labels.template.bent = true;
+	// pieSeries.labels.template.radius = 3;
+	pieSeries.labels.template.padding(0, 0, 0, 0);
+	pieSeries.labels.template.fill = am4core.color("#ffffff");
+	
+	pieSeries.ticks.template.disabled = true;
+	
+	//color
+	pieSeries.slices.template.propertyFields.fill = "color";
+	
+	// Create a base filter effect (as if it's not there) for the hover to return to
+	var shadow = pieSeries.slices.template.filters.push(new am4core.DropShadowFilter);
+	shadow.opacity = 0;
+	
+	// Create hover state
+	var hoverState = pieSeries.slices.template.states.getKey("hover"); // normally we have to create the hover state, in this case it already exists
+	
+	// Slightly shift the shadow and make it more prominent on hover
+	var hoverShadow = hoverState.filters.push(new am4core.DropShadowFilter);
+	hoverShadow.opacity = 0.7;
+	hoverShadow.blur = 5;
+	
+	// Add a legend
+	// chart.legend = new am4charts.Legend();
+	
+	chart.data = [
+	{
+	tingkat: "Ekstrem",
+	jumlah: 1,
+	color: am4core.color("#F14236")
+	},
+	{
+	tingkat: "Sangat Tinggi",
+	jumlah: 2,
+	color: am4core.color("#FF7F25")
+	},
+	{
+	tingkat: "Tinggi",
+	jumlah: 7,
+	color: am4core.color("#ffe94d")
+	},
+	{
+	tingkat: "Moderat",
+	jumlah: 6,
+	color: am4core.color("#2196f3")
+	},
+	{
+	tingkat: "Rendah",
+	jumlah: 2,
+	color: am4core.color("#58b051")
+	},
+	];
+	
+	
+	// Themes begin
+	am4core.useTheme(am4themes_animated);
+	// Themes end
+	
+	// Create chart instance
+	var chart = am4core.create("donut_chart4", am4charts.PieChart3D);
+	
+	// Add and configure Series
+	var pieSeries = chart.series.push(new am4charts.PieSeries3D());
+	pieSeries.dataFields.value = "jumlah";
+	pieSeries.dataFields.category = "tingkat";
+	
+	// Let's cut a hole in our Pie chart the size of 30% the radius
+	// chart.innerRadius = am4core.percent(30);
+	
+	// Put a thick white border around each Slice
+	// pieSeries.slices.template.stroke = am4core.color("#fff");
+	// pieSeries.slices.template.strokeWidth = 2;
+	// pieSeries.slices.template.strokeOpacity = 1;
+	pieSeries.slices.template
+	// change the cursor on hover to make it apparent the object can be interacted with
+	.cursorOverStyle = [{
+	"property": "cursor",
+	"value": "pointer"
+	}];
+	
+	pieSeries.alignLabels = false;
+	// pieSeries.labels.template.bent = true;
+	// pieSeries.labels.template.radius = 3;
+	pieSeries.labels.template.padding(0, 0, 0, 0);
+	pieSeries.labels.template.fill = am4core.color("#ffffff");
+	
+	pieSeries.ticks.template.disabled = true;
+	
+	//color
+	pieSeries.slices.template.propertyFields.fill = "color";
+	
+	// Create a base filter effect (as if it's not there) for the hover to return to
+	var shadow = pieSeries.slices.template.filters.push(new am4core.DropShadowFilter);
+	shadow.opacity = 0;
+	
+	// Create hover state
+	var hoverState = pieSeries.slices.template.states.getKey("hover"); // normally we have to create the hover state, in this case it already exists
+	
+	// Slightly shift the shadow and make it more prominent on hover
+	var hoverShadow = hoverState.filters.push(new am4core.DropShadowFilter);
+	hoverShadow.opacity = 0.7;
+	hoverShadow.blur = 5;
+	
+	// Add a legend
+	// chart.legend = new am4charts.Legend();
+	
+	chart.data = [
+	{
+	tingkat: "Moderat",
+	jumlah: 15,
+	color: am4core.color("#2196f3")
+	},
+	{
+	tingkat: "Rendah",
+	jumlah: 3,
+	color: am4core.color("#58b051")
+	},
+	];
+	
+	}); // end am4core.ready()
+	$(document).ready(function() {
+	$('[data-toggle="tooltip"]').tooltip();
+	});
+	</script>
+	<style>
+	g[aria-labelledby="id-66-title"],
+	g[aria-labelledby="id-142-title"],
+	g[aria-labelledby="id-218-title"],
+	g[aria-labelledby="id-294-title"],
+	g[aria-labelledby="id-145-title"],
+	g[aria-labelledby="id-224-title"],
+	g[aria-labelledby="id-303-title"] {
+	display: none;
+	}
+	
+	text>tspan {
+	font-family: "Lato", sans-serif;
+	font-size: 11px !important;
+	}
+	
+	.dark-tooltip+.tooltip>.tooltip-inner {
+	background-color: #000c !important;
+	border: 1px solid #000c;
+	}
+	
+	.header .form-line {
+	display: inline;
+	}
+	
+	.panah {
+	/* background-image: -webkit-gradient(linear, 0% 50%, 100% 100%, from(#ffffff), to(#e6e6e6)) !important;
+	font-size: 100px; */
+	/* margin-left: -50px;
+	margin-top: 320px;*/
+	position: absolute;
+	z-index: 10;
+	/* text-shadow: 0px 5px 5px rgba(0, 0, 0, .2);
+	color: transparent;
+	-webkit-background-clip: text;
+	background-clip: text; */
+	}
+	
+	.panah1 {
+	-webkit-animation: myrighta 4s;
+	/* Safari 4.0 - 8.0 */
+	animation: myrighta 4s;
+	top: 150px;
+	right: 71%;
+	}
+	
+	.panah2 {
+	-webkit-animation: myrightb 4s;
+	/* Safari 4.0 - 8.0 */
+	animation: myrightb 4s;
+	top: 150px;
+	right: 46%;
+	}
+	
+	.panah3 {
+	-webkit-animation: myrightc 4s;
+	/* Safari 4.0 - 8.0 */
+	animation: myrightc 4s;
+	top: 150px;
+	right: 21%;
+	}
+	
+	
+	/* ! my new style */
+	.panah {
+	/* background-image: unset !important; */
+	font-size: unset !important;
+	position: absolute;
+	z-index: 10;
+	text-shadow: unset !important;
+	color: unset !important;
+	-webkit-background-clip: unset !important;
+	background-clip: unset !important;
+	width: 100px;
+	height: 100px;
+	background-position: center;
+	background-size: 70%;
+	background-repeat: no-repeat;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #2a7489 !important;
+	filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.2));
+	}
+	
+	
+	@media (max-width: 991px) {
+	.panah {
+	display: none;
+	}
+	}
+	
+	
+	
+	@-webkit-keyframes myrighta {
+	0% {
+	opacity: 0;
+	right: 77%;
+	}
+	
+	60% {
+	opacity: 0;
+	right: 77%;
+	}
+	
+	70% {
+	right: 67%;
+	opacity: 1;
+	}
+	}
+	
+	@keyframes myrighta {
+	0% {
+	opacity: 0;
+	right: 77%;
+	}
+	
+	60% {
+	opacity: 0;
+	right: 77%;
+	}
+	
+	70% {
+	right: 67%;
+	opacity: 1;
+	}
+	}
+	
+	@-webkit-keyframes myrightb {
+	0% {
+	right: 52%;
+	opacity: 0;
+	}
+	
+	70% {
+	right: 52%;
+	opacity: 0;
+	}
+	
+	80% {
+	right: 42%;
+	opacity: 1;
+	}
+	}
+	
+	@keyframes myrightb {
+	0% {
+	right: 52%;
+	opacity: 0;
+	}
+	
+	70% {
+	right: 52%;
+	opacity: 0;
+	}
+	
+	80% {
+	right: 42%;
+	opacity: 1;
+	}
+	}
+	
+	@-webkit-keyframes myrightc {
+	0% {
+	right: 27%;
+	opacity: 0;
+	}
+	
+	80% {
+	right: 27%;
+	opacity: 0;
+	}
+	
+	90% {
+	right: 17%;
+	opacity: 1;
+	}
+	}
+	
+	@keyframes myrightc {
+	0% {
+	right: 27%;
+	opacity: 0;
+	}
+	
+	80% {
+	right: 27%;
+	opacity: 0;
+	}
+	
+	90% {
+	right: 17%;
+	opacity: 1;
+	}
+	}
+	</style>
+	
+	<script>
+	var _paq = window._paq = window._paq || [];
+	/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+	_paq.push(['setUserId', ]);
+	_paq.push(['trackPageView', 123123]);
+	_paq.push(['enableLinkTracking']);
+	(function() {
+	var u = "https://epilog.ptpjb.com/";
+	_paq.push(['setTrackerUrl', u + 'matomo.php']);
+	_paq.push(['setSiteId', '38']);
+	var d = document,
+	g = d.createElement('script'),
+	s = d.getElementsByTagName('script')[0];
+	g.async = true;
+	g.src = u + 'matomo.js';
+	s.parentNode.insertBefore(g, s);
+	})();
+	</script>
+	<!-- End script epilog --> <div style="clear: both;"></div>
+	</div>
+	
+	</form>
+	</section>
+	
+	
+	<!-- Select Plugin Js -->
+	<!--<script src="http://localhost/assets/template/backend/plugins/bootstrap-select/js/bootstrap-select.js"></script>-->
+	
+	<!-- Slimscroll Plugin Js -->
+	<script src="http://localhost/assets/template/backend/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+	
+	<!-- Waves Effect Plugin Js -->
+	<script src="http://localhost/assets/template/backend/plugins/node-waves/waves.js"></script>
+	
+	
+	<!-- Autosize Plugin Js -->
+	<script src="http://localhost/assets/template/backend/plugins/autosize/autosize.js"></script>
+	
+	<!-- Jquery CountTo Plugin Js -->
+	<script src="http://localhost/assets/template/backend/plugins/jquery-countto/jquery.countTo.js"></script>
+	
+	<!-- Sparkline Chart Plugin Js -->
+	<script src="http://localhost/assets/template/backend/plugins/jquery-sparkline/jquery.sparkline.js"></script>
+	
+	<!-- Custom Js -->
+	<script src="http://localhost/assets/template/backend/js/admin.js"></script>
+	
+	<script src="http://localhost/assets/template/backend/js/pages/forms/basic-form-elements.js"></script>
+	<!-- Demo Js -->
+	<script src="http://localhost/assets/template/backend/js/demo.js"></script>
+	<script src="http://localhost/assets/js/custom.js"></script>
+	<script src="http://localhost/assets/js/select2/select2.full.min.js"></script>
+	<script>
+	$(function() {
+	$(".select2, select.form-control").select2({
+	placeholder: '-',
+	allowClear: true // Shows an X to allow the user to clear the value.
+	});
+	});
+	</script>
+	<link rel="stylesheet" href="http://localhost/assets/css/select2-materialize.css" />
+	<link rel="stylesheet" href="http://localhost/assets/css/materialize.css" />
+	<script src="http://localhost/assets/js/datepicker/js/moment.min.js"></script><script src="http://localhost/assets/template/backend/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script><script>$(function(){
+	
+	$(".datetimepicker").bootstrapMaterialDatePicker({
+	format: "DD-MM-YYYY HH:mm:ss",
+	clearButton: true,
+	weekStart: 1
+	});
+	$(".datepicker").bootstrapMaterialDatePicker({
+	format: "DD-MM-YYYY",
+	clearButton: true,
+	weekStart: 1,
+	time: false
+	});
+	$(".datepickerstart").bootstrapMaterialDatePicker({
+	format: "DD-MM-YYYY",
+	clearButton: true,
+	weekStart: 1,
+	time: false,
+	minDate : new Date()
+	});
+	
+	$(".timepicker").bootstrapMaterialDatePicker({
+	format: "HH:mm",
+	clearButton: true,
+	date: false
+	});
+	
+	});</script><link href="http://localhost/assets/template/backend/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet" />
+	
+	<script type="text/javascript">
+	$(function() {
+	if ($(window).width() < 700) {
+	componentMinimized();
+	} else {
+	componentExpanded();
+	}
+	})
+	
+	function goToggle() {
+	$.ajax({
+	url: "http://localhost/panelbackend/ajax/set_toggle?1685092562",
+	data: {
+	collapse: ($("#leftsidebar").hasClass("minimized-style") ? 0 : 1)
+	}
+	});
+	}
+	
+	$("#cari_risikoinput").keyup(function(e) {
+	$("#cari_risiko").val($("#cari_risikoinput").val());
+	if (event.keyCode === 13) {
+	goSubmit("cari_risiko");
+	}
+	});
+	</script>
+	<script src="http://localhost/assets/js/newscript.js"></script>
+	</body>
+	
+	</html>
+	<style type="text/css">
+	.tunjuk {
+	font-size: 14px !important;
+	margin-top: 10px !important;
+	color: #ff0000 !important;
+	position: relative;
+	-webkit-animation: mytunjuk 0.5s;
+	animation: mytunjuk 0.5s;
+	-webkit-animation-iteration-count: infinite;
+	/* Safari 4.0 - 8.0 */
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	-webkit-animation-direction: alternate;
+	/* Safari 4.0 - 8.0 */
+	
+	top: 1px;
+	display: inline-block;
+	font-weight: bold;
+	line-height: 0;
+	-webkit-font-smoothing: antialiased;
+	}
+	
+	/* Safari 4.0 - 8.0 */
+	@-webkit-keyframes mytunjuk {
+	0% {
+	margin-left: 5px;
+	color: #ffcb52 !important;
+	}
+	
+	100% {
+	margin-left: 0px;
+	color: #ff0000 !important;
+	}
+	}
+	
+	@keyframes mytunjuk {
+	0% {
+	margin-left: 5px;
+	color: #ffcb52 !important;
+	}
+	
+	100% {
+	margin-left: 0px;
+	color: #ff0000 !important;
+	}
+	}
+	</style>

@@ -1,0 +1,87 @@
+ #holder {
+    margin :0 auto;
+    display:inline-block;
+    width: 200px;
+}
+.left {
+    float:left;
+}
+.right {
+    float:right;
+}
+#logo {
+    align:middle;
+    text-align:center;
+    display: flex;
+}
+#wrapper {
+    height:200px;
+    position: relative;
+    padding: 0em 0em 0em 0em;
+    background: #fff;
+    border: 1px solid blue;
+}
+#container {
+    width:100%;
+    text-align:center;
+}
+
+
+#left {
+    float:left;
+    /*width:100px;*/
+    height: 20px;
+}
+
+#center {
+    display: inline-block;
+    margin:0 auto;
+    /*width:100px;*/
+    height: 20px;
+}
+
+#right {
+    float:right;
+    height: 20px;
+}
+
+.alignMe b {
+  display: inline-block;
+  /*width: 50%;*/
+  position: relative;
+  padding-right: 32px; /* Ensures colon does not overlay the text */
+}
+
+.alignMe b::after {
+  content: ":";
+  position: absolute;
+  right: 10px;
+}
+
+
+p.form_text1>span {
+  display: inline-block;
+  min-width: 120px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  margin-left:-5px;
+  margin-right:-5px;
+}
+  
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}

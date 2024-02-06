@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<menu>
+	<item id="SUB" text="Tambah Sub"></item>
+	<item id="UBAH" text="Ubah"></item>
+	<item id="HAPUS" text="Hapus"></item>
+	<item id="REALISASI" text="Isi Realisasi"></item>
+	<item id="IMPORT" text="Import Realisasi"></item>
+</menu>

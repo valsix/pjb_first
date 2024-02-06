@@ -1,0 +1,23 @@
+.stick {
+/*    border: 2px solid red;*/
+/*
+    position: sticky;
+    top: 0;
+    z-index: 99;
+*/
+    
+/*
+    background-color: rgba(0,0,0,0.9);
+    background: url(images/linear_bg_2.png);
+    background-repeat: repeat-x;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(0,0,0,0.9)), to(rgba(0,0,0,0)));
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0.9), rgba(0,0,0,0));
+    background: -moz-linear-gradient(top, rgba(0,0,0,0.9), rgba(0,0,0,0));
+    background: -ms-linear-gradient(top, rgba(0,0,0,0.9), rgba(0,0,0,0));
+    background: -o-linear-gradient(top, rgba(0,0,0,0.9), rgba(0,0,0,0));
+*/
+    
+/*    background: red;*/
+/*    z-index: 99;*/
+/*    width: 50%;*/
+}
