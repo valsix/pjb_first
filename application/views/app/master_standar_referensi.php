@@ -57,6 +57,13 @@ unset($set);
 <script type="text/javascript" language="javascript" class="init">	
 </script> 
 
+<style type="text/css">
+    table.dataTable tbody tr td {
+        word-wrap: break-word;
+        white-space: break-spaces;
+    }
+</style>
+
 <!-- FIXED AKSI AREA WHEN SCROLLING -->
 <link rel="stylesheet" href="css/gaya-stick-when-scroll.css" type="text/css">
 <script src="assets/js/stick.js" type="text/javascript"></script>
@@ -173,7 +180,7 @@ $(document).ready(function() {
         <div class="area-filter">
 		</div>
             
-        <table id="example" class="table table-striped table-hover dt-responsive" cellspacing="0" width="100%">
+        <table id="example" class="display table table-striped table-hover dt-responsive" cellspacing="0" width="100%">
             <thead>
                 <tr>
                     <?php
