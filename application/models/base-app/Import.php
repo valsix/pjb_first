@@ -275,17 +275,16 @@
 
 	function insertstandar()
     {
-    	$this->setField("STANDAR_REFERENSI_ID", $this->getNextId("STANDAR_REFERENSI_ID","STANDAR_REFERENSI"));
+    	// $this->setField("STANDAR_REFERENSI_ID", $this->getNextId("STANDAR_REFERENSI_ID","STANDAR_REFERENSI"));
 
     	$str = "
     	INSERT INTO STANDAR_REFERENSI
     	(
-    		STANDAR_REFERENSI_ID,NAMA, NOMOR, KLAUSUL, DESKRIPSI, TAHUN, LAST_CREATE_USER,LAST_CREATE_DATE,KODE,BAB
+    		NAMA, NOMOR, KLAUSUL, DESKRIPSI, TAHUN, LAST_CREATE_USER,LAST_CREATE_DATE,KODE,BAB
     	)
     	VALUES 
     	(
-    		".$this->getField("STANDAR_REFERENSI_ID")."
-	    	, '".$this->getField("NAMA")."'
+	    	 '".$this->getField("NAMA")."'
 	    	, '".$this->getField("NOMOR")."'
 	    	, '".$this->getField("KLAUSUL")."'
 	    	, '".$this->getField("DESKRIPSI")."'
@@ -1618,6 +1617,27 @@
 		, EMAIL = '".$this->getField("EMAIL")."'
 		, EXPIRED_DATE = ".$this->getField("EXPIRED_DATE")."
 		WHERE PENGGUNA_EXTERNAL_ID = '".$this->getField("PENGGUNA_EXTERNAL_ID")."'
+		"; 
+		$this->query = $str;
+		// echo $str;exit;
+		return $this->execQuery($str);
+	}
+
+
+	function disabletriggerstandar()
+	{
+		$str = "
+		ALTER TABLE STANDAR_REFERENSI DISABLE TRIGGER kode_standar_t
+		"; 
+		$this->query = $str;
+		// echo $str;exit;
+		return $this->execQuery($str);
+	}
+
+	function enabletriggerstandar()
+	{
+		$str = "
+		ALTER TABLE STANDAR_REFERENSI ENABLE TRIGGER kode_standar_t
 		"; 
 		$this->query = $str;
 		// echo $str;exit;

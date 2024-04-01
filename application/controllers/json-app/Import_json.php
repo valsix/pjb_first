@@ -731,6 +731,8 @@ class Import_json extends CI_Controller
 
 		$baris = $data->rowcount($sheet_index=0);
 
+		// print_r($baris);exit;
+
 		$arrField= array("NAMA","NOMOR","TAHUN","BAB","DESKRIPSI");
 
 		$this->load->model("base-app/Import");
@@ -740,6 +742,7 @@ class Import_json extends CI_Controller
 		$reqSimpan="";
 		$index=2;
 		$arrbaris=[];
+		
 		for ($z=2; $z<=$baris; $z++)
 		{
 			$colIndexCheck=1;
@@ -747,6 +750,7 @@ class Import_json extends CI_Controller
 			for($rowCheck=0; $rowCheck < count($arrField); $rowCheck++)
 			{
 				$tempValueCheck= $data->val($z,$colIndexCheck);
+				// print_r($colIndexCheck);
 				if($arrField[$rowCheck]=="NAMA")
 				{
 					if (!empty($tempValueCheck))
@@ -785,49 +789,127 @@ class Import_json extends CI_Controller
 						echo "xxx***Bab ke ".$z." Belum Diisi";
 						exit();
 					}
-					// if(is_numeric($tempValueCheck))
-					// {}
-					// else
-					// {
-					// 	echo "xxx***Pastikan Bab baris ke ".$z." sudah diisi dan berformat numeric";
-					// 	exit();
-					// }
+					
 				}
-				// print_r($tempValueCheck);
-				$colIndexCheck++;
+
+		
+					$colIndexCheck++;
 			}
+
+				
+
 		}
 
-		// exit;
+		// $distrigger = new Import();
+		// $distrigger->disabletriggerstandar();
+
 
 		// exit;
+		$reqSimpan="";
+		$gagal=0;
+	    $berhasil=0;
+	    $reqUpdate="";
+	    $tampil="";
 		for ($i=2; $i<=$baris; $i++){
 			$colIndex=1;
 			$arrData= [];
 
 			for($row=0; $row < count($arrField); $row++){
-				$tempValue= $data->val($i,$colIndex);
-				$arrData[$arrField[$row]]['VALUE']= $data->val($i,$colIndex);
-				$set->setField($arrField[$row],$tempValue);
-				$colIndex++;
-			}
+						$tempValue= $data->val($i,$colIndex);
+						// $tempValue = preg_replace('/[\x00-\x1F\x7F]/u', '', $tempValue);
+						$tempValue = preg_replace('/[\x00-\x1F\x7F\xA0]/u', '', $tempValue);
+						$tempValue = setQuote($tempValue);
+						$arrData[$arrField[$row]]['VALUE']= $data->val($i,$colIndex);
+						$set->setField($arrField[$row],$tempValue);
 
-			$set->setField("LAST_CREATE_DATE", "NOW()");
-			$set->setField("LAST_CREATE_USER", $this->appusernama);
-			if($set->insertstandar())
-			{
-				$reqSimpan = 1;
-			}
+							
+						$reqNamaCheck= $data->val($i,1);
+						$reqNomorCheck= $data->val($i,2);
+						$reqTahunCheck= $data->val($i,3);
+						$reqBabCheck= $data->val($i,4);
+						$reqDeskripsiCheck= $data->val($i,5);
+						$reqKodeInsert= $reqNamaCheck.' '.$reqNomorCheck.' '.$reqTahunCheck.' '.$reqBabCheck;
+
+
+						$statement = " AND A.KODE = '".$reqKodeInsert."'";
+						$setchecknew= new Import();
+						$setchecknew->selectByParamsCheckStandar(array(), -1, -1, $statement);
+							// echo $setchecknew->query;
+						$setchecknew->firstRow();
+						$reqKodeCheck= $setchecknew->getField("KODE");
+						$reqStandarId= $setchecknew->getField("STANDAR_REFERENSI_ID");
+						// print_r($reqStandarId);
+						if($reqKodeCheck)
+						{
+							$reqUpdate="1";
+
+							$set->setField("LAST_UPDATE_DATE", "NOW()");
+							$set->setField("LAST_UPDATE_USER", $this->appusernama);
+							$set->setField("STANDAR_REFERENSI_ID", $reqStandarId);
+							
+						}
+						else
+						{
+							// echo $setchecknew->query;
+							$set->setField("LAST_CREATE_DATE", "NOW()");
+							$set->setField("LAST_CREATE_USER", $this->appusernama);
+							
+							$reqUpdate="";
+						}
+
+						$set->setField("KODE", $reqKodeInsert);
+
+					$colIndex++;
+				}
+
+
+				if($reqUpdate=="1")
+				{
+					
+					$tampil="update";
+					if($set->updatestandar())
+					{
+						$reqSimpan = 1;
+						$berhasil++;
+					}
+					else
+					{
+						// echo $setchecknew->query;
+
+						// print_r($set->query);
+						$reqSimpan = "";
+						$gagal++;
+					}
+				}
+				else
+				{
+					
+					$tampil="simpan";
+					if($set->insertstandar())
+					{
+						 // print_r($set->query);
+						$berhasil++;
+						// $reqSimpan = 1;
+					}
+					else
+					{
+						// print_r($set->query);
+						$gagal++;
+						// $reqSimpan = "";
+					}
+
+				}
+
+
+			
 		}
 
-		if($reqSimpan == 1 )
-		{
-			echo $reqId."***Data berhasil disimpan";
-		}
-		else
-		{
-			echo "xxx***Data gagal disimpan";
-		}
+		// $enstrigger = new Import();
+		// $enstrigger->enabletriggerstandar();
+
+		echo $berhasil." data telah berhasil di simpan.  ".$gagal." data gagal di simpan.";
+
+		
 	}
 
 	function konfirmasi_item() 

@@ -1,0 +1,6 @@
+CREATE SEQUENCE standar_seq;
+
+ALTER TABLE standar_referensi 
+ALTER COLUMN standar_referensi_id SET DEFAULT NEXTVAL('standar_seq');
+
+ALTER TABLE standar_referensi ALTER COLUMN kode TYPE text;

@@ -80,7 +80,7 @@ class standar_referensi_json extends CI_Controller
 			
 		}
 
-		$sOrder = " ORDER BY A.NAMA ASC ";
+		$sOrder = " ORDER BY A.STANDAR_REFERENSI_ID ASC ";
 		$set->selectByParams(array(), $dsplyRange, $dsplyStart, $statement.$searchJson, $sOrder);
 
 		// echo $set->query;exit;
