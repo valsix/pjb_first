@@ -48,9 +48,9 @@ while($set->nextRow())
     <link rel="stylesheet" href="assets/AdminLTE-3.1.0/plugins/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="assets/AdminLTE-3.1.0/dist/css/adminlte.min.css">
     <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
-    <link href="assets/bootstrap-3.3.7/docs/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/bootstrap-3.3.7/docs/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-    <script src="assets/bootstrap-3.3.7/docs/assets/js/ie-emulation-modes-warning.js"></script>
+    <link href="assets/bootstrap-4.1.2/docs/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/bootstrap-4.1.2/docs/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <script src="assets/bootstrap-4.1.2/docs/assets/js/ie-emulation-modes-warning.js"></script>
 
     <link rel="stylesheet" href="css/halaman.css" type="text/css">
     <link rel="stylesheet" href="css/gaya-egateway.css" type="text/css">
@@ -118,8 +118,8 @@ while($set->nextRow())
     </div>
 
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="assets/bootstrap-3.3.7/docs/dist/js/bootstrap.min.js"></script>
-    <script src="assets/bootstrap-3.3.7/docs/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="assets/bootstrap-4.1.2/docs/dist/js/bootstrap.min.js"></script>
+    <script src="assets/bootstrap-4.1.2/docs/assets/js/ie10-viewport-bug-workaround.js"></script>
     
     <!-- SCROLLBAR -->
     <script type='text/javascript' src="assets/js/enscroll-0.6.0.min.js"></script>

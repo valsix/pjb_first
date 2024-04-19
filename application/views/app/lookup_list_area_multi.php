@@ -27,7 +27,6 @@ $reqId = $this->input->get("reqId");
 <!--<link href="lib/bootstrap/bootstrap.css" rel="stylesheet">-->
 <link rel="stylesheet" href="lib/font-awesome/4.5.0/css/font-awesome.css">
 
-<!--<script src="js/jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script> -->
 
     <style>
     .col-md-12{

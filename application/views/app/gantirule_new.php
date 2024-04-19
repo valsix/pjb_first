@@ -19,10 +19,10 @@ $appuserkodehak= $this->appuserkodehak;
     <base href="<?=base_url();?>" />
     
     <script type="text/javascript" src="assets/vegas/jquery-3.7.1.min.js"></script>
-    <link href="assets/bootstrap-3.3.7/docs/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/bootstrap-3.3.7/docs/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-    <link href="assets/bootstrap-3.3.7/docs/examples/signin/signin.css" rel="stylesheet">
-    <script src="assets/bootstrap-3.3.7/docs/assets/js/ie-emulation-modes-warning.js"></script>
+    <link href="assets/bootstrap-4.1.2/docs/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/bootstrap-4.1.2/docs/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="assets/bootstrap-4.1.2/docs/examples/signin/signin.css" rel="stylesheet">
+    <script src="assets/bootstrap-4.1.2/docs/assets/js/ie-emulation-modes-warning.js"></script>
     <link rel="stylesheet" href="css/gaya-egateway.css" type="text/css">
           
     <style>
@@ -84,7 +84,7 @@ $appuserkodehak= $this->appuserkodehak;
         </div>
     </div>
     
-    <script src="assets/bootstrap-3.3.7/docs/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="assets/bootstrap-4.1.2/docs/assets/js/ie10-viewport-bug-workaround.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/easyui/themes/default/easyui.css">
     <link rel="stylesheet" type="text/css" href="assets/easyui/themes/icon.css">
     <script type="text/javascript" src="assets/easyui/jquery.easyui.min.js"></script>
@@ -144,7 +144,7 @@ $appuserkodehak= $this->appuserkodehak;
             });
         }
     </script>
-    <script src="assets/bootstrap-3.3.7/dist/js/bootstrap.js"></script>
+    <script src="assets/bootstrap-4.1.2/dist/js/bootstrap.js"></script>
 
   </body>
 </html>
