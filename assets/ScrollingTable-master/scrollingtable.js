@@ -6,7 +6,7 @@
  * http://www.vladajanosevic.info/
  * Free to use and change
  *
- * Required: jQuery 1.11.1
+ * Required: jQuery 3.5.1
  */
 +function ($) {
 	"use strict";
