@@ -342,29 +342,53 @@ class area_unit_json extends CI_Controller
 			if (!empty($reqListAreaId))
 			{
 				$reqSimpan="";
-				$set = new AreaUnit();
-				$set->setField("AREA_UNIT_ID", $reqId);
-				$set->deleteareaall();
-				unset($set);
+				// $set = new AreaUnit();
+				// $set->setField("AREA_UNIT_ID", $reqId);
+				// $set->deleteareaall();
+				// unset($set);
 				
 				foreach ($reqListAreaId as $key => $value) {
 					$set = new AreaUnit();
 					$set->setField("AREA_UNIT_ID", $reqId);
 					$set->setField("LIST_AREA_ID", $value);
-					if($set->insertarea())
+
+					$checkarea = new AreaUnit();
+					$statement = " AND A.AREA_UNIT_ID = '".$reqId."'  AND A.LIST_AREA_ID = '".$value."' ";
+					$checkarea->selectByParamsAreaUnitArea(array(), -1, -1, $statement);
+
+					// echo $checkarea->query;exit; 
+					$checkarea->firstRow();
+					$reqAreaUnitAreaId= $checkarea->getField("AREA_UNIT_AREA_ID");
+
+					if(empty($reqAreaUnitAreaId))
 					{
-						$reqSimpan= 1;
+						if($set->insertarea())
+						{
+							$reqSimpan= 1;
+						}
 					}
+					else
+					{
+						$set->setField("AREA_UNIT_AREA_ID", $reqAreaUnitAreaId);
+						if($set->updatearea())
+						{
+							$reqSimpan= 1;
+						}
+					}
+
+					
 				}
 			}
+
+
 
 			if (!empty($reqNamaUnit))
 			{
 				$reqSimpan="";
-				$set = new AreaUnit();
-				$set->setField("AREA_UNIT_ID", $reqId);
-				$set->deletedetilall();
-				unset($set);
+				// $set = new AreaUnit();
+				// $set->setField("AREA_UNIT_ID", $reqId);
+				// $set->deletedetilall();
+				// unset($set);
 
 				foreach ($reqNamaUnit as $key => $value) {
 					$set = new AreaUnit();
@@ -373,10 +397,29 @@ class area_unit_json extends CI_Controller
 					$set->setField("STATUS_KONFIRMASI", $reqStatusConfirm[$key]);
 					$set->setField("ITEM_ASSESSMENT_DUPLIKAT_ID", $iddetil[$key]);
 					$set->setField("NAMA", $value);
-					if($set->insertdetil())
+
+					$checkarea = new AreaUnit();
+					$statement = " AND A.AREA_UNIT_ID = '".$reqId."'  AND A.LIST_AREA_ID = '".$reqListAreaIdDetil[$key]."' AND A.ITEM_ASSESSMENT_DUPLIKAT_ID = '".$iddetil[$key]."'  ";
+					$checkarea->selectByParamsDetil(array(), -1, -1, $statement);
+					$checkarea->firstRow();
+					$reqAreaDetilId= $checkarea->getField("AREA_UNIT_DETIL_ID");
+
+					if(empty($reqAreaDetilId))
 					{
-						$reqSimpan= 1;
+						if($set->insertdetil())
+						{
+							$reqSimpan= 1;
+						}
 					}
+					else
+					{
+						$set->setField("AREA_UNIT_DETIL_ID", $reqAreaDetilId);
+						if($set->update_detil_new())
+						{
+							$reqSimpan= 1;
+						}
+					}
+					
 				}
 			}
 		}

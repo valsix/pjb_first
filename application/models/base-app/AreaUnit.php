@@ -105,6 +105,21 @@ class AreaUnit extends Entity {
 	}
 
 
+	function update_detil_new()
+	{
+		$str = "
+		UPDATE AREA_UNIT_DETIL
+		SET
+		 STATUS_KONFIRMASI= ".$this->getField("STATUS_KONFIRMASI")."
+		, NAMA= '".$this->getField("NAMA")."'
+		WHERE AREA_UNIT_DETIL_ID = '".$this->getField("AREA_UNIT_DETIL_ID")."'
+		";  
+		$this->query = $str;
+			// echo $str;exit;
+		return $this->execQuery($str);
+	}
+
+
 	function update()
 	{
 		$str = "
@@ -121,6 +136,20 @@ class AreaUnit extends Entity {
 		, UNIT_MESIN_ID= ".$this->getField("UNIT_MESIN_ID")."
 		, KODE_DUPLIKAT= '".$this->getField("KODE_DUPLIKAT")."'
 		WHERE AREA_UNIT_ID = '".$this->getField("AREA_UNIT_ID")."'
+		"; 
+		$this->query = $str;
+			// echo $str;exit;
+		return $this->execQuery($str);
+	}
+
+	function updatearea()
+	{
+		$str = "
+		UPDATE AREA_UNIT_AREA
+		SET
+		LIST_AREA_ID= ".$this->getField("LIST_AREA_ID")."
+		, AREA_UNIT_ID= ".$this->getField("AREA_UNIT_ID")."
+		WHERE AREA_UNIT_AREA_ID = '".$this->getField("AREA_UNIT_AREA_ID")."'
 		"; 
 		$this->query = $str;
 			// echo $str;exit;
@@ -318,6 +347,48 @@ class AreaUnit extends Entity {
 		}
 		
 		$str .= $statement." GROUP BY B.LIST_AREA_ID ".$sOrder;
+		$this->query = $str;
+				
+		return $this->selectLimit($str,$limit,$from); 
+	}
+
+	function selectByParamsAreaUnitArea($paramsArray=array(),$limit=-1,$from=-1, $statement='', $sOrder="")
+	{
+		$str = "
+			SELECT 
+				 A.*
+			FROM AREA_UNIT_AREA A 
+			WHERE 1=1
+			
+		"; 
+		
+		while(list($key,$val) = each($paramsArray))
+		{
+			$str .= " AND $key = '$val' ";
+		}
+		
+		$str .= $statement." ".$sOrder;
+		$this->query = $str;
+				
+		return $this->selectLimit($str,$limit,$from); 
+	}
+
+	function selectByParamsDetil($paramsArray=array(),$limit=-1,$from=-1, $statement='', $sOrder="")
+	{
+		$str = "
+			SELECT 
+				 A.*
+			FROM AREA_UNIT_DETIL A 
+			WHERE 1=1
+			
+		"; 
+		
+		while(list($key,$val) = each($paramsArray))
+		{
+			$str .= " AND $key = '$val' ";
+		}
+		
+		$str .= $statement."  ".$sOrder;
 		$this->query = $str;
 				
 		return $this->selectLimit($str,$limit,$from); 
