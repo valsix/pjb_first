@@ -96,193 +96,193 @@ class Login extends CI_Controller
 
 			// var_dump($valid);exit;
 
-			if($valid == 1)
-			{
-				// $reqUser =  $hasil["nid"];
-				// $reqPasswd=  $hasil["password"];
-				$this->load->model("base/Users");
-				$this->load->model("base-app/Crud");
+			// if($valid == 1)
+			// {
+			// 	// $reqUser =  $hasil["nid"];
+			// 	// $reqPasswd=  $hasil["password"];
+			// 	$this->load->model("base/Users");
+			// 	$this->load->model("base-app/Crud");
 
-				$credential =  md5($reqPasswd);
-				$users = new Users();
-				$users->selectByCheckUser($reqUser, $credential);
-				// echo $users->query;exit;
-				if($users->firstRow())
-				{
-					$update = new Users();
-					$update->setField("USERNAME", $reqUser);
-					$update->setField("PASS", md5($reqPasswd));
-					$reqSimpan="";
-					if($update->update())
-					{
-						$check = new Users();
-						$check->selectByInternal($reqUser);
-						$check->firstRow();
-						// echo $check->query;exit;
-						$reqInternalId= $check->getField("PENGGUNA_INTERNAL_ID");
-						$reqNamaLengkap= $check->getField("NAMA_LENGKAP");
-						$reqPositionId= $check->getField("POSITION_ID");
-						unset($check);
-						if(!empty($reqPositionId))
-						{
-							$checkjabatan = new Crud();
-							$statement =" AND A.POSITION_ID='".$reqPositionId."'";
-							$checkjabatan->selectByParamsJabatan(array(), -1, -1, $statement);
-							// echo $checkjabatan->query;exit;
-							while($checkjabatan->nextRow())
-							{
-								$reqPenggunaHakId= $checkjabatan->getField("PENGGUNA_HAK_ID");
-								$checkhak = new Crud();
-								$statement =" AND PENGGUNA_ID='".$users->getField("PENGGUNA_ID")."' AND PENGGUNA_HAK_ID='".$reqPenggunaHakId."'";
+			// 	$credential =  md5($reqPasswd);
+			// 	$users = new Users();
+			// 	$users->selectByCheckUser($reqUser, $credential);
+			// 	// echo $users->query;exit;
+			// 	if($users->firstRow())
+			// 	{
+			// 		$update = new Users();
+			// 		$update->setField("USERNAME", $reqUser);
+			// 		$update->setField("PASS", md5($reqPasswd));
+			// 		$reqSimpan="";
+			// 		if($update->update())
+			// 		{
+			// 			$check = new Users();
+			// 			$check->selectByInternal($reqUser);
+			// 			$check->firstRow();
+			// 			// echo $check->query;exit;
+			// 			$reqInternalId= $check->getField("PENGGUNA_INTERNAL_ID");
+			// 			$reqNamaLengkap= $check->getField("NAMA_LENGKAP");
+			// 			$reqPositionId= $check->getField("POSITION_ID");
+			// 			unset($check);
+			// 			if(!empty($reqPositionId))
+			// 			{
+			// 				$checkjabatan = new Crud();
+			// 				$statement =" AND A.POSITION_ID='".$reqPositionId."'";
+			// 				$checkjabatan->selectByParamsJabatan(array(), -1, -1, $statement);
+			// 				// echo $checkjabatan->query;exit;
+			// 				while($checkjabatan->nextRow())
+			// 				{
+			// 					$reqPenggunaHakId= $checkjabatan->getField("PENGGUNA_HAK_ID");
+			// 					$checkhak = new Crud();
+			// 					$statement =" AND PENGGUNA_ID='".$users->getField("PENGGUNA_ID")."' AND PENGGUNA_HAK_ID='".$reqPenggunaHakId."'";
 
-								$checkhak->selectByParamsHakAkses(array(), -1, -1, $statement);
-								// echo $checkhak->query;exit;
-								$checkhak->firstRow();
-								$reqPenggunaId= $checkhak->getField("PENGGUNA_ID");
-								$inserthak = new Crud();
-								$inserthak->setField("PENGGUNA_HAK_ID", $reqPenggunaHakId);
-								$inserthak->setField("POSITION_ID", $reqPositionId);
-								$inserthak->setField("PENGGUNA_ID", $users->getField("PENGGUNA_ID"));
-								if(empty($reqPenggunaId))
-								{
-									if($inserthak->inserthakakses()) 
-									{
-									}
-								}
+			// 					$checkhak->selectByParamsHakAkses(array(), -1, -1, $statement);
+			// 					// echo $checkhak->query;exit;
+			// 					$checkhak->firstRow();
+			// 					$reqPenggunaId= $checkhak->getField("PENGGUNA_ID");
+			// 					$inserthak = new Crud();
+			// 					$inserthak->setField("PENGGUNA_HAK_ID", $reqPenggunaHakId);
+			// 					$inserthak->setField("POSITION_ID", $reqPositionId);
+			// 					$inserthak->setField("PENGGUNA_ID", $users->getField("PENGGUNA_ID"));
+			// 					if(empty($reqPenggunaId))
+			// 					{
+			// 						if($inserthak->inserthakakses()) 
+			// 						{
+			// 						}
+			// 					}
 
-							}
+			// 				}
 
-							$checkunit = new Crud();
-							$statement =" AND A.POSITION_ID='".$reqPositionId."'";
-							$checkunit->selectByParamsKodeUnit(array(), -1, -1, $statement);
-							// echo $checkunit->query;exit;
-							$checkunit->firstRow();
+			// 				$checkunit = new Crud();
+			// 				$statement =" AND A.POSITION_ID='".$reqPositionId."'";
+			// 				$checkunit->selectByParamsKodeUnit(array(), -1, -1, $statement);
+			// 				// echo $checkunit->query;exit;
+			// 				$checkunit->firstRow();
 							
-							$reqDistrikId= $checkunit->getField("DISTRIK_ID");
-							if(!empty($reqDistrikId))
-							{
+			// 				$reqDistrikId= $checkunit->getField("DISTRIK_ID");
+			// 				if(!empty($reqDistrikId))
+			// 				{
 
-								$checkdistrik = new Crud();
-								$statement =" AND PENGGUNA_ID='".$users->getField("PENGGUNA_ID")."' AND DISTRIK_ID='".$reqDistrikId."'";
+			// 					$checkdistrik = new Crud();
+			// 					$statement =" AND PENGGUNA_ID='".$users->getField("PENGGUNA_ID")."' AND DISTRIK_ID='".$reqDistrikId."'";
 
-								$checkdistrik->selectByParamsPenggunaDistrik(array(), -1, -1, $statement);
-								// echo $checkdistrik->query;exit;
-								$checkdistrik->firstRow();
-								$reqPenggunaId= $checkdistrik->getField("PENGGUNA_ID");
-								$status="";
+			// 					$checkdistrik->selectByParamsPenggunaDistrik(array(), -1, -1, $statement);
+			// 					// echo $checkdistrik->query;exit;
+			// 					$checkdistrik->firstRow();
+			// 					$reqPenggunaId= $checkdistrik->getField("PENGGUNA_ID");
+			// 					$status="";
 								
-								if(empty($reqPenggunaId))
-								{
-									$insertdistrik = new Crud();
-									$insertdistrik->setField("STATUS_ALL", ValToNullDB($status));
-									$insertdistrik->setField("DISTRIK_ID", $reqDistrikId);
-									$insertdistrik->setField("PENGGUNA_ID", $users->getField("PENGGUNA_ID"));
-									if($insertdistrik->insertPenggunaDistrik()) 
-									{
-									}
-								}
+			// 					if(empty($reqPenggunaId))
+			// 					{
+			// 						$insertdistrik = new Crud();
+			// 						$insertdistrik->setField("STATUS_ALL", ValToNullDB($status));
+			// 						$insertdistrik->setField("DISTRIK_ID", $reqDistrikId);
+			// 						$insertdistrik->setField("PENGGUNA_ID", $users->getField("PENGGUNA_ID"));
+			// 						if($insertdistrik->insertPenggunaDistrik()) 
+			// 						{
+			// 						}
+			// 					}
 
-							}
+			// 				}
 							
 
-						}
-						$reqSimpan=1;
-					}	
-				}
-				else
-				{
-					$check = new Users();
-					$check->selectByInternal($reqUser);
-					$check->firstRow();
-					// echo $check->query;exit;
-					$reqInternalId= $check->getField("PENGGUNA_INTERNAL_ID");
-					$reqNamaLengkap= $check->getField("NAMA_LENGKAP");
-					unset($check);
+			// 			}
+			// 			$reqSimpan=1;
+			// 		}	
+			// 	}
+			// 	else
+			// 	{
+			// 		$check = new Users();
+			// 		$check->selectByInternal($reqUser);
+			// 		$check->firstRow();
+			// 		// echo $check->query;exit;
+			// 		$reqInternalId= $check->getField("PENGGUNA_INTERNAL_ID");
+			// 		$reqNamaLengkap= $check->getField("NAMA_LENGKAP");
+			// 		unset($check);
 
-					$insert = new Users();
-					$insert->setField("USERNAME", $reqUser);
-					$insert->setField("PASS", md5($reqPasswd));
-					$insert->setField("PENGGUNA_INTERNAL_ID", ValToNullDB($reqInternalId));
-					$insert->setField("NAMA", $reqNamaLengkap);
-					$reqSimpan="";
-					if($insert->insert())
-					{
-						$reqSimpan=1;
-						$reqPenggunaIdNew=$insert->id;
+			// 		$insert = new Users();
+			// 		$insert->setField("USERNAME", $reqUser);
+			// 		$insert->setField("PASS", md5($reqPasswd));
+			// 		$insert->setField("PENGGUNA_INTERNAL_ID", ValToNullDB($reqInternalId));
+			// 		$insert->setField("NAMA", $reqNamaLengkap);
+			// 		$reqSimpan="";
+			// 		if($insert->insert())
+			// 		{
+			// 			$reqSimpan=1;
+			// 			$reqPenggunaIdNew=$insert->id;
 
-						$check = new Users();
-						$check->selectByInternal($reqUser);
-						$check->firstRow();
-						// echo $check->query;exit;
-						$reqInternalId= $check->getField("PENGGUNA_INTERNAL_ID");
-						$reqNamaLengkap= $check->getField("NAMA_LENGKAP");
-						$reqPositionId= $check->getField("POSITION_ID");
-						unset($check);
-						if(!empty($reqPositionId))
-						{
-							$checkjabatan = new Crud();
-							$statement =" AND A.POSITION_ID='".$reqPositionId."'";
-							$checkjabatan->selectByParamsJabatan(array(), -1, -1, $statement);
-							// echo $checkjabatan->query;exit;
-							while($checkjabatan->nextRow())
-							{
-								$reqPenggunaHakId= $checkjabatan->getField("PENGGUNA_HAK_ID");
-								$checkhak = new Crud();
-								$statement =" AND PENGGUNA_ID='".$users->getField("PENGGUNA_ID")."' AND PENGGUNA_HAK_ID='".$reqPenggunaHakId."'";
+			// 			$check = new Users();
+			// 			$check->selectByInternal($reqUser);
+			// 			$check->firstRow();
+			// 			// echo $check->query;exit;
+			// 			$reqInternalId= $check->getField("PENGGUNA_INTERNAL_ID");
+			// 			$reqNamaLengkap= $check->getField("NAMA_LENGKAP");
+			// 			$reqPositionId= $check->getField("POSITION_ID");
+			// 			unset($check);
+			// 			if(!empty($reqPositionId))
+			// 			{
+			// 				$checkjabatan = new Crud();
+			// 				$statement =" AND A.POSITION_ID='".$reqPositionId."'";
+			// 				$checkjabatan->selectByParamsJabatan(array(), -1, -1, $statement);
+			// 				// echo $checkjabatan->query;exit;
+			// 				while($checkjabatan->nextRow())
+			// 				{
+			// 					$reqPenggunaHakId= $checkjabatan->getField("PENGGUNA_HAK_ID");
+			// 					$checkhak = new Crud();
+			// 					$statement =" AND PENGGUNA_ID='".$users->getField("PENGGUNA_ID")."' AND PENGGUNA_HAK_ID='".$reqPenggunaHakId."'";
 
-								$checkhak->selectByParamsHakAkses(array(), -1, -1, $statement);
-								// echo $checkhak->query;exit;
-								$checkhak->firstRow();
-								$reqPenggunaId= $checkhak->getField("PENGGUNA_ID");
-								$inserthak = new Crud();
-								$inserthak->setField("PENGGUNA_HAK_ID", $reqPenggunaHakId);
-								$inserthak->setField("POSITION_ID", $reqPositionId);
-								$inserthak->setField("PENGGUNA_ID", $reqPenggunaIdNew);
-								if(empty($reqPenggunaId))
-								{
-									if($inserthak->inserthakakses()) 
-									{
-									}
-								}
+			// 					$checkhak->selectByParamsHakAkses(array(), -1, -1, $statement);
+			// 					// echo $checkhak->query;exit;
+			// 					$checkhak->firstRow();
+			// 					$reqPenggunaId= $checkhak->getField("PENGGUNA_ID");
+			// 					$inserthak = new Crud();
+			// 					$inserthak->setField("PENGGUNA_HAK_ID", $reqPenggunaHakId);
+			// 					$inserthak->setField("POSITION_ID", $reqPositionId);
+			// 					$inserthak->setField("PENGGUNA_ID", $reqPenggunaIdNew);
+			// 					if(empty($reqPenggunaId))
+			// 					{
+			// 						if($inserthak->inserthakakses()) 
+			// 						{
+			// 						}
+			// 					}
 
-							}
+			// 				}
 
-							$checkunit = new Crud();
-							$statement =" AND A.POSITION_ID='".$reqPositionId."'";
-							$checkunit->selectByParamsKodeUnit(array(), -1, -1, $statement);
-							// echo $checkunit->query;exit;
-							$checkunit->firstRow();
+			// 				$checkunit = new Crud();
+			// 				$statement =" AND A.POSITION_ID='".$reqPositionId."'";
+			// 				$checkunit->selectByParamsKodeUnit(array(), -1, -1, $statement);
+			// 				// echo $checkunit->query;exit;
+			// 				$checkunit->firstRow();
 							
-							$reqDistrikId= $checkunit->getField("DISTRIK_ID");
-							if(!empty($reqDistrikId))
-							{
+			// 				$reqDistrikId= $checkunit->getField("DISTRIK_ID");
+			// 				if(!empty($reqDistrikId))
+			// 				{
 
-								$checkdistrik = new Crud();
-								$statement =" AND PENGGUNA_ID='".$reqPenggunaIdNew."' AND DISTRIK_ID='".$reqDistrikId."'";
+			// 					$checkdistrik = new Crud();
+			// 					$statement =" AND PENGGUNA_ID='".$reqPenggunaIdNew."' AND DISTRIK_ID='".$reqDistrikId."'";
 
-								$checkdistrik->selectByParamsPenggunaDistrik(array(), -1, -1, $statement);
-								// echo $checkdistrik->query;exit;
-								$checkdistrik->firstRow();
-								$reqPenggunaId= $checkdistrik->getField("PENGGUNA_ID");
-								$status="";
+			// 					$checkdistrik->selectByParamsPenggunaDistrik(array(), -1, -1, $statement);
+			// 					// echo $checkdistrik->query;exit;
+			// 					$checkdistrik->firstRow();
+			// 					$reqPenggunaId= $checkdistrik->getField("PENGGUNA_ID");
+			// 					$status="";
 								
-								if(empty($reqPenggunaId))
-								{
-									$insertdistrik = new Crud();
-									$insertdistrik->setField("STATUS_ALL", ValToNullDB($status));
-									$insertdistrik->setField("DISTRIK_ID", $reqDistrikId);
-									$insertdistrik->setField("PENGGUNA_ID", $reqPenggunaIdNew);
-									if($insertdistrik->insertPenggunaDistrik()) 
-									{
-									}
-								}
+			// 					if(empty($reqPenggunaId))
+			// 					{
+			// 						$insertdistrik = new Crud();
+			// 						$insertdistrik->setField("STATUS_ALL", ValToNullDB($status));
+			// 						$insertdistrik->setField("DISTRIK_ID", $reqDistrikId);
+			// 						$insertdistrik->setField("PENGGUNA_ID", $reqPenggunaIdNew);
+			// 						if($insertdistrik->insertPenggunaDistrik()) 
+			// 						{
+			// 						}
+			// 					}
 
-							}
+			// 				}
 
-						}
-					}	
-				}
-			}
+			// 			}
+			// 		}	
+			// 	}
+			// }
 			// exit;
 			// print_r($reqSimpan);exit;
 
