@@ -5,6 +5,8 @@ $this->load->model("base-app/Kemungkinan");
 $this->load->model("base-app/Dampak");
 $this->load->model("base-app/Kesesuaian");
 $this->load->model("base-app/MatriksRisiko");
+$this->load->model("base-app/Crud");
+$this->load->model("base/Users");
 
 
 
@@ -16,6 +18,38 @@ $reqTahun= $this->input->get("reqTahun");
 $reqStatus= $this->input->get("reqStatus");
 $reqListAreaId= $this->input->get("reqListAreaId");
 $reqBulan= $this->input->get("reqBulan");
+
+$appuserkodehak= $this->appuserkodehak;
+$appuserkodehak= $this->appuserkodehak;
+$reqPenggunaid= $this->appuserid;
+
+$checkrole= new Crud();
+$statement=" AND A.KODE_HAK LIKE '%".$appuserkodehak."%'";
+
+$checkrole->selectByParams(array(), -1, -1, $statement);
+$checkrole->firstRow();
+$reqPenggunaHakId= $checkrole->getField("PENGGUNA_HAK_ID");
+
+if($reqPenggunaHakId==1)
+{}
+else
+{
+    $arridDistrik=[];
+    $usersdistrik = new Users();
+    $usersdistrik->selectByPenggunaDistrik($reqPenggunaid);
+    while($usersdistrik->nextRow())
+    {
+        $arridDistrik[]= $usersdistrik->getField("DISTRIK_ID"); 
+
+    }
+
+    $idDistrik = implode(",",$arridDistrik);  
+}
+
+if(!empty($idDistrik))
+{
+    $reqDistrikId=$idDistrik;
+}
 
 
 
@@ -72,7 +106,7 @@ $statement="";
 
 if(!empty($reqDistrikId))
 {
-    $statement.=" AND A.DISTRIK_ID=".$reqDistrikId;
+    $statement.=" AND A.DISTRIK_ID IN (".$reqDistrikId.")";
 }
 if(!empty($reqBlok))
 {

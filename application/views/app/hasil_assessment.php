@@ -98,7 +98,35 @@ unset($set);
 $set= new Kesesuaian();
 $arrrekap= [];
 
-$set->selectByParamsNew(array(), -1,-1," ");
+$checkrole= new Crud();
+$statement=" AND A.KODE_HAK LIKE '%".$appuserkodehak."%'";
+
+$checkrole->selectByParams(array(), -1, -1, $statement);
+$checkrole->firstRow();
+$reqPenggunaHakId= $checkrole->getField("PENGGUNA_HAK_ID");
+
+if($reqPenggunaHakId==1)
+{}
+else
+{
+    $arridDistrik=[];
+    $usersdistrik = new Users();
+    $usersdistrik->selectByPenggunaDistrik($reqPenggunaid);
+    while($usersdistrik->nextRow())
+    {
+        $arridDistrik[]= $usersdistrik->getField("DISTRIK_ID"); 
+
+    }
+
+    $idDistrikNew = implode(",",$arridDistrik);  
+}
+
+if(!empty($idDistrikNew))
+{
+    $statement=" AND A.DISTRIK_ID IN (".$idDistrikNew.")";
+}
+
+$set->selectByParamsNew(array(), -1,-1, $statement);
 // echo $set->query;exit;
 $no=1;
 $jumlahcomply=0;

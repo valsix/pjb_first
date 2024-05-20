@@ -29,6 +29,8 @@ class hasil_assessment_json extends CI_Controller {
 	function jumlahitem()
 	{
 		$this->load->model("base-app/Kesesuaian");
+		$this->load->model("base-app/Crud");
+		$this->load->model("base/Users");
 		$statement="";
 		
 		$reqDistrikId= $this->input->get("reqDistrikId");
@@ -38,11 +40,45 @@ class hasil_assessment_json extends CI_Controller {
 		$reqListAreaId= $this->input->get("reqListAreaId");
 		$reqBulan= $this->input->get("reqBulan");
 
+		$appuserkodehak= $this->appuserkodehak;
+		$appuserkodehak= $this->appuserkodehak;
+		$reqPenggunaid= $this->appuserid;
+
+		$checkrole= new Crud();
+		$statement=" AND A.KODE_HAK LIKE '%".$appuserkodehak."%'";
+
+		$checkrole->selectByParams(array(), -1, -1, $statement);
+		$checkrole->firstRow();
+		$reqPenggunaHakId= $checkrole->getField("PENGGUNA_HAK_ID");
+
+		if($reqPenggunaHakId==1)
+		{}
+		else
+		{
+		    $arridDistrik=[];
+		    $usersdistrik = new Users();
+		    $usersdistrik->selectByPenggunaDistrik($reqPenggunaid);
+		    while($usersdistrik->nextRow())
+		    {
+		        $arridDistrik[]= $usersdistrik->getField("DISTRIK_ID"); 
+
+		    }
+
+		    $idDistrik = implode(",",$arridDistrik);  
+		}
+
+		if(!empty($idDistrik))
+		{
+			$reqDistrikId=$idDistrik;
+		}
+
+
 		$statement="";
 		$statemenstatus="";
+	
 		if(!empty($reqDistrikId))
 		{
-			$statement.=" AND A.DISTRIK_ID=".$reqDistrikId;
+			$statement.=" AND A.DISTRIK_ID IN (".$reqDistrikId.")";
 		}
 		if(!empty($reqBlok))
 		{
@@ -102,6 +138,8 @@ class hasil_assessment_json extends CI_Controller {
 		$this->load->model("base-app/MatriksRisiko");
 		$this->load->model("base-app/Dampak");
 		$this->load->model("base-app/Kemungkinan");
+		$this->load->model("base-app/Crud");
+		$this->load->model("base/Users");
 		$statement="";
 		
 		$reqDistrikId= $this->input->get("reqDistrikId");
@@ -110,6 +148,38 @@ class hasil_assessment_json extends CI_Controller {
 		$reqStatus= $this->input->get("reqStatus");
 		$reqListAreaId= $this->input->get("reqListAreaId");
 		$reqBulan= $this->input->get("reqBulan");
+
+		$appuserkodehak= $this->appuserkodehak;
+		$appuserkodehak= $this->appuserkodehak;
+		$reqPenggunaid= $this->appuserid;
+
+		$checkrole= new Crud();
+		$statement=" AND A.KODE_HAK LIKE '%".$appuserkodehak."%'";
+
+		$checkrole->selectByParams(array(), -1, -1, $statement);
+		$checkrole->firstRow();
+		$reqPenggunaHakId= $checkrole->getField("PENGGUNA_HAK_ID");
+
+		if($reqPenggunaHakId==1)
+		{}
+		else
+		{
+		    $arridDistrik=[];
+		    $usersdistrik = new Users();
+		    $usersdistrik->selectByPenggunaDistrik($reqPenggunaid);
+		    while($usersdistrik->nextRow())
+		    {
+		        $arridDistrik[]= $usersdistrik->getField("DISTRIK_ID"); 
+
+		    }
+
+		    $idDistrik = implode(",",$arridDistrik);  
+		}
+
+		if(!empty($idDistrik))
+		{
+			$reqDistrikId=$idDistrik;
+		}
 
 		
 
@@ -159,9 +229,10 @@ class hasil_assessment_json extends CI_Controller {
 
 		$statement="";
 		$statemenstatus="";
+	
 		if(!empty($reqDistrikId))
 		{
-			$statement.=" AND A.DISTRIK_ID=".$reqDistrikId;
+			$statement.=" AND A.DISTRIK_ID IN (".$reqDistrikId.")";
 		}
 		if(!empty($reqBlok))
 		{
@@ -347,6 +418,8 @@ class hasil_assessment_json extends CI_Controller {
 		$this->load->model("base-app/MatriksRisiko");
 		$this->load->model("base-app/Dampak");
 		$this->load->model("base-app/Kemungkinan");
+		$this->load->model("base-app/Crud");
+		$this->load->model("base/Users");
 		$statement="";
 		
 		$reqDistrikId= $this->input->get("reqDistrikId");
@@ -355,6 +428,38 @@ class hasil_assessment_json extends CI_Controller {
 		$reqStatus= $this->input->get("reqStatus");
 		$reqListAreaId= $this->input->get("reqListAreaId");
 		$reqBulan= $this->input->get("reqBulan");
+
+		$appuserkodehak= $this->appuserkodehak;
+		$appuserkodehak= $this->appuserkodehak;
+		$reqPenggunaid= $this->appuserid;
+
+		$checkrole= new Crud();
+		$statement=" AND A.KODE_HAK LIKE '%".$appuserkodehak."%'";
+
+		$checkrole->selectByParams(array(), -1, -1, $statement);
+		$checkrole->firstRow();
+		$reqPenggunaHakId= $checkrole->getField("PENGGUNA_HAK_ID");
+
+		if($reqPenggunaHakId==1)
+		{}
+		else
+		{
+		    $arridDistrik=[];
+		    $usersdistrik = new Users();
+		    $usersdistrik->selectByPenggunaDistrik($reqPenggunaid);
+		    while($usersdistrik->nextRow())
+		    {
+		        $arridDistrik[]= $usersdistrik->getField("DISTRIK_ID"); 
+
+		    }
+
+		    $idDistrik = implode(",",$arridDistrik);  
+		}
+
+		if(!empty($idDistrik))
+		{
+			$reqDistrikId=$idDistrik;
+		}
 		
 
 		$set= new Dampak();
@@ -403,9 +508,10 @@ class hasil_assessment_json extends CI_Controller {
 
 		$statement="";
 		$statemenstatus="";
+	
 		if(!empty($reqDistrikId))
 		{
-			$statement.=" AND A.DISTRIK_ID=".$reqDistrikId;
+			$statement.=" AND A.DISTRIK_ID IN (".$reqDistrikId.")";
 		}
 		if(!empty($reqBlok))
 		{
@@ -644,6 +750,8 @@ class hasil_assessment_json extends CI_Controller {
 	function rekapkategori()
 	{
 		$this->load->model("base-app/HasilAssessment");
+		$this->load->model("base-app/Crud");
+		$this->load->model("base/Users");
 		$statement="";
 		
 		$reqDistrikId= $this->input->get("reqDistrikId");
@@ -653,12 +761,45 @@ class hasil_assessment_json extends CI_Controller {
 		$reqListAreaId= $this->input->get("reqListAreaId");
 		$reqBulan= $this->input->get("reqBulan");
 
+		$appuserkodehak= $this->appuserkodehak;
+		$appuserkodehak= $this->appuserkodehak;
+		$reqPenggunaid= $this->appuserid;
+
+		$checkrole= new Crud();
+		$statement=" AND A.KODE_HAK LIKE '%".$appuserkodehak."%'";
+
+		$checkrole->selectByParams(array(), -1, -1, $statement);
+		$checkrole->firstRow();
+		$reqPenggunaHakId= $checkrole->getField("PENGGUNA_HAK_ID");
+
+		if($reqPenggunaHakId==1)
+		{}
+		else
+		{
+		    $arridDistrik=[];
+		    $usersdistrik = new Users();
+		    $usersdistrik->selectByPenggunaDistrik($reqPenggunaid);
+		    while($usersdistrik->nextRow())
+		    {
+		        $arridDistrik[]= $usersdistrik->getField("DISTRIK_ID"); 
+
+		    }
+
+		    $idDistrik = implode(",",$arridDistrik);  
+		}
+
+		if(!empty($idDistrik))
+		{
+			$reqDistrikId=$idDistrik;
+		}
+
 
 		$statement="";
 		$statemenstatus="";
+	
 		if(!empty($reqDistrikId))
 		{
-			$statement.=" AND C.DISTRIK_ID=".$reqDistrikId;
+			$statement.=" AND C.DISTRIK_ID IN (".$reqDistrikId.")";
 		}
 		if(!empty($reqBlok))
 		{
@@ -702,6 +843,8 @@ class hasil_assessment_json extends CI_Controller {
 	function rekapjenis()
 	{
 		$this->load->model("base-app/HasilAssessment");
+		$this->load->model("base-app/Crud");
+		$this->load->model("base/Users");
 		$statement="";
 		
 		$reqDistrikId= $this->input->get("reqDistrikId");
@@ -711,12 +854,46 @@ class hasil_assessment_json extends CI_Controller {
 		$reqListAreaId= $this->input->get("reqListAreaId");
 		$reqBulan= $this->input->get("reqBulan");
 
+		$appuserkodehak= $this->appuserkodehak;
+		$appuserkodehak= $this->appuserkodehak;
+		$reqPenggunaid= $this->appuserid;
+
+		$checkrole= new Crud();
+		$statement=" AND A.KODE_HAK LIKE '%".$appuserkodehak."%'";
+
+		$checkrole->selectByParams(array(), -1, -1, $statement);
+		$checkrole->firstRow();
+		$reqPenggunaHakId= $checkrole->getField("PENGGUNA_HAK_ID");
+
+		if($reqPenggunaHakId==1)
+		{}
+		else
+		{
+		    $arridDistrik=[];
+		    $usersdistrik = new Users();
+		    $usersdistrik->selectByPenggunaDistrik($reqPenggunaid);
+		    while($usersdistrik->nextRow())
+		    {
+		        $arridDistrik[]= $usersdistrik->getField("DISTRIK_ID"); 
+
+		    }
+
+		    $idDistrik = implode(",",$arridDistrik);  
+		}
+
+		if(!empty($idDistrik))
+		{
+			$reqDistrikId=$idDistrik;
+		}
+
+
 
 		$statement="";
 		$statemenstatus="";
+	
 		if(!empty($reqDistrikId))
 		{
-			$statement.=" AND C.DISTRIK_ID=".$reqDistrikId;
+			$statement.=" AND C.DISTRIK_ID IN (".$reqDistrikId.")";
 		}
 		if(!empty($reqBlok))
 		{
@@ -761,6 +938,8 @@ class hasil_assessment_json extends CI_Controller {
 	function rekapprioritas()
 	{
 		$this->load->model("base-app/HasilAssessment");
+		$this->load->model("base-app/Crud");
+		$this->load->model("base/Users");
 		$statement="";
 		
 		$reqDistrikId= $this->input->get("reqDistrikId");
@@ -770,12 +949,45 @@ class hasil_assessment_json extends CI_Controller {
 		$reqListAreaId= $this->input->get("reqListAreaId");
 		$reqBulan= $this->input->get("reqBulan");
 
+		$appuserkodehak= $this->appuserkodehak;
+		$appuserkodehak= $this->appuserkodehak;
+		$reqPenggunaid= $this->appuserid;
+
+		$checkrole= new Crud();
+		$statement=" AND A.KODE_HAK LIKE '%".$appuserkodehak."%'";
+
+		$checkrole->selectByParams(array(), -1, -1, $statement);
+		$checkrole->firstRow();
+		$reqPenggunaHakId= $checkrole->getField("PENGGUNA_HAK_ID");
+
+		if($reqPenggunaHakId==1)
+		{}
+		else
+		{
+		    $arridDistrik=[];
+		    $usersdistrik = new Users();
+		    $usersdistrik->selectByPenggunaDistrik($reqPenggunaid);
+		    while($usersdistrik->nextRow())
+		    {
+		        $arridDistrik[]= $usersdistrik->getField("DISTRIK_ID"); 
+
+		    }
+
+		    $idDistrik = implode(",",$arridDistrik);  
+		}
+
+		if(!empty($idDistrik))
+		{
+			$reqDistrikId=$idDistrik;
+		}
+
 
 		$statement="";
 		$statemenstatus="";
+	
 		if(!empty($reqDistrikId))
 		{
-			$statement.=" AND C.DISTRIK_ID=".$reqDistrikId;
+			$statement.=" AND C.DISTRIK_ID IN (".$reqDistrikId.")";
 		}
 		if(!empty($reqBlok))
 		{
@@ -822,13 +1034,47 @@ class hasil_assessment_json extends CI_Controller {
 	function grafik_tingkat()
 	{
 		$this->load->model("base-app/Kesesuaian");
+		$this->load->model("base-app/Crud");
+		$this->load->model("base/Users");
 
 		$reqDistrikId= $this->input->get("reqDistrikId");
 		$reqBlok= $this->input->get("reqBlok");
 		$reqTahun= $this->input->get("reqTahun");
 		$reqStatus= $this->input->get("reqStatus");
 		$reqListAreaId= $this->input->get("reqListAreaId");
-		$reqBulan= $this->input->get("reqBulan");		
+		$reqBulan= $this->input->get("reqBulan");	
+
+		$appuserkodehak= $this->appuserkodehak;
+		$appuserkodehak= $this->appuserkodehak;
+		$reqPenggunaid= $this->appuserid;
+
+		$checkrole= new Crud();
+		$statement=" AND A.KODE_HAK LIKE '%".$appuserkodehak."%'";
+
+		$checkrole->selectByParams(array(), -1, -1, $statement);
+		$checkrole->firstRow();
+		$reqPenggunaHakId= $checkrole->getField("PENGGUNA_HAK_ID");
+
+		if($reqPenggunaHakId==1)
+		{}
+		else
+		{
+		    $arridDistrik=[];
+		    $usersdistrik = new Users();
+		    $usersdistrik->selectByPenggunaDistrik($reqPenggunaid);
+		    while($usersdistrik->nextRow())
+		    {
+		        $arridDistrik[]= $usersdistrik->getField("DISTRIK_ID"); 
+
+		    }
+
+		    $idDistrik = implode(",",$arridDistrik);  
+		}
+
+		if(!empty($idDistrik))
+		{
+			$reqDistrikId=$idDistrik;
+		}	
 		
 		$jumlahklausul=0;
 		$jumlahcomply=0;
@@ -838,7 +1084,7 @@ class hasil_assessment_json extends CI_Controller {
 		$statemenstatus="";
 		if(!empty($reqDistrikId))
 		{
-			$statement.=" AND A.DISTRIK_ID=".$reqDistrikId;
+			$statement.=" AND A.DISTRIK_ID IN (".$reqDistrikId.")";
 		}
 		if(!empty($reqBlok))
 		{
@@ -922,6 +1168,8 @@ class hasil_assessment_json extends CI_Controller {
 	function grafik_jenis_rekomendasi()
 	{
 		$this->load->model("base-app/HasilAssessment");
+		$this->load->model("base-app/Crud");
+		$this->load->model("base/Users");
 		
 		$reqDistrikId= $this->input->get("reqDistrikId");
 		$reqBlok= $this->input->get("reqBlok");
@@ -931,11 +1179,46 @@ class hasil_assessment_json extends CI_Controller {
 		$reqBulan= $this->input->get("reqBulan");
 
 
+		$appuserkodehak= $this->appuserkodehak;
+		$appuserkodehak= $this->appuserkodehak;
+		$reqPenggunaid= $this->appuserid;
+
+		$checkrole= new Crud();
+		$statement=" AND A.KODE_HAK LIKE '%".$appuserkodehak."%'";
+
+		$checkrole->selectByParams(array(), -1, -1, $statement);
+		$checkrole->firstRow();
+		$reqPenggunaHakId= $checkrole->getField("PENGGUNA_HAK_ID");
+
+		if($reqPenggunaHakId==1)
+		{}
+		else
+		{
+		    $arridDistrik=[];
+		    $usersdistrik = new Users();
+		    $usersdistrik->selectByPenggunaDistrik($reqPenggunaid);
+		    while($usersdistrik->nextRow())
+		    {
+		        $arridDistrik[]= $usersdistrik->getField("DISTRIK_ID"); 
+
+		    }
+
+		    $idDistrik = implode(",",$arridDistrik);  
+		}
+
+		if(!empty($idDistrik))
+		{
+			$reqDistrikId=$idDistrik;
+		}
+
+
+
 		$statement="";
 		$statemenstatus="";
+
 		if(!empty($reqDistrikId))
 		{
-			$statement.=" AND C.DISTRIK_ID=".$reqDistrikId;
+			$statement.=" AND C.DISTRIK_ID IN (".$reqDistrikId.")";
 		}
 		if(!empty($reqBlok))
 		{
@@ -986,6 +1269,8 @@ class hasil_assessment_json extends CI_Controller {
 	function grafik_kategori_rekomendasi()
 	{
 		$this->load->model("base-app/HasilAssessment");
+		$this->load->model("base-app/Crud");
+		$this->load->model("base/Users");
 		$statement="";
 
 		$set= new HasilAssessment();
@@ -998,11 +1283,44 @@ class hasil_assessment_json extends CI_Controller {
 		$reqListAreaId= $this->input->get("reqListAreaId");
 		$reqBulan= $this->input->get("reqBulan");
 
+		$appuserkodehak= $this->appuserkodehak;
+		$appuserkodehak= $this->appuserkodehak;
+		$reqPenggunaid= $this->appuserid;
+
+		$checkrole= new Crud();
+		$statement=" AND A.KODE_HAK LIKE '%".$appuserkodehak."%'";
+
+		$checkrole->selectByParams(array(), -1, -1, $statement);
+		$checkrole->firstRow();
+		$reqPenggunaHakId= $checkrole->getField("PENGGUNA_HAK_ID");
+
+		if($reqPenggunaHakId==1)
+		{}
+		else
+		{
+		    $arridDistrik=[];
+		    $usersdistrik = new Users();
+		    $usersdistrik->selectByPenggunaDistrik($reqPenggunaid);
+		    while($usersdistrik->nextRow())
+		    {
+		        $arridDistrik[]= $usersdistrik->getField("DISTRIK_ID"); 
+
+		    }
+
+		    $idDistrik = implode(",",$arridDistrik);  
+		}
+
+		if(!empty($idDistrik))
+		{
+			$reqDistrikId=$idDistrik;
+		}
+
+
 		$statement="";
 		$statemenstatus="";
 		if(!empty($reqDistrikId))
 		{
-			$statement.=" AND C.DISTRIK_ID=".$reqDistrikId;
+			$statement.=" AND C.DISTRIK_ID IN (".$reqDistrikId.")";
 		}
 		if(!empty($reqBlok))
 		{
@@ -1047,6 +1365,8 @@ class hasil_assessment_json extends CI_Controller {
 	function grafik_prioritas_rekomendasi()
 	{
 		$this->load->model("base-app/HasilAssessment");
+		$this->load->model("base-app/Crud");
+		$this->load->model("base/Users");
 		$statement="";
 
 		$set= new HasilAssessment();
@@ -1059,12 +1379,46 @@ class hasil_assessment_json extends CI_Controller {
 		$reqListAreaId= $this->input->get("reqListAreaId");
 		$reqBulan= $this->input->get("reqBulan");
 
+		$appuserkodehak= $this->appuserkodehak;
+		$appuserkodehak= $this->appuserkodehak;
+		$reqPenggunaid= $this->appuserid;
+
+		$checkrole= new Crud();
+		$statement=" AND A.KODE_HAK LIKE '%".$appuserkodehak."%'";
+
+		$checkrole->selectByParams(array(), -1, -1, $statement);
+		$checkrole->firstRow();
+		$reqPenggunaHakId= $checkrole->getField("PENGGUNA_HAK_ID");
+
+		if($reqPenggunaHakId==1)
+		{}
+		else
+		{
+		    $arridDistrik=[];
+		    $usersdistrik = new Users();
+		    $usersdistrik->selectByPenggunaDistrik($reqPenggunaid);
+		    while($usersdistrik->nextRow())
+		    {
+		        $arridDistrik[]= $usersdistrik->getField("DISTRIK_ID"); 
+
+		    }
+
+		    $idDistrik = implode(",",$arridDistrik);  
+		}
+
+		if(!empty($idDistrik))
+		{
+			$reqDistrikId=$idDistrik;
+		}
+
+
 		$statement="";
 		$statemenstatus="";
 		if(!empty($reqDistrikId))
 		{
-			$statement.=" AND C.DISTRIK_ID=".$reqDistrikId;
+			$statement.=" AND C.DISTRIK_ID IN (".$reqDistrikId.")";
 		}
+		
 		if(!empty($reqBlok))
 		{
 			$statement.=" AND C.BLOK_UNIT_ID=".$reqBlok;
@@ -1112,6 +1466,8 @@ class hasil_assessment_json extends CI_Controller {
 	function grafik_kesesuaian()
 	{
 		$this->load->model("base-app/Kesesuaian");
+		$this->load->model("base-app/Crud");
+		$this->load->model("base/Users");
 		$statement="";
 
 		$set= new Kesesuaian();
@@ -1124,11 +1480,45 @@ class hasil_assessment_json extends CI_Controller {
 		$reqListAreaId= $this->input->get("reqListAreaId");
 		$reqBulan= $this->input->get("reqBulan");
 
+		$appuserkodehak= $this->appuserkodehak;
+		$appuserkodehak= $this->appuserkodehak;
+		$reqPenggunaid= $this->appuserid;
+
+		$checkrole= new Crud();
+		$statement=" AND A.KODE_HAK LIKE '%".$appuserkodehak."%'";
+
+		$checkrole->selectByParams(array(), -1, -1, $statement);
+		$checkrole->firstRow();
+		$reqPenggunaHakId= $checkrole->getField("PENGGUNA_HAK_ID");
+
+		if($reqPenggunaHakId==1)
+		{}
+		else
+		{
+		    $arridDistrik=[];
+		    $usersdistrik = new Users();
+		    $usersdistrik->selectByPenggunaDistrik($reqPenggunaid);
+		    while($usersdistrik->nextRow())
+		    {
+		        $arridDistrik[]= $usersdistrik->getField("DISTRIK_ID"); 
+
+		    }
+
+		    $idDistrik = implode(",",$arridDistrik);  
+		}
+
+		if(!empty($idDistrik) && empty($reqDistrikId))
+		{
+			$reqDistrikId=$idDistrik;
+		}
+
+		
+
 		$statement="";
 		$statemenstatus="";
 		if(!empty($reqDistrikId))
 		{
-			$statement.=" AND A.DISTRIK_ID=".$reqDistrikId;
+			$statement.=" AND A.DISTRIK_ID IN (".$reqDistrikId.")";
 		}
 		if(!empty($reqBlok))
 		{
