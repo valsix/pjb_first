@@ -121,6 +121,7 @@ else
     $idDistrikNew = implode(",",$arridDistrik);  
 }
 
+$statement="";
 if(!empty($idDistrikNew))
 {
     $statement=" AND A.DISTRIK_ID IN (".$idDistrikNew.")";
